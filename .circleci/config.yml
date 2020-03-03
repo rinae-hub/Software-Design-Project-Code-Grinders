@@ -18,4 +18,6 @@ workflows:
 after_success: 
   -bash <(curl -s https://codecov.io/bash) 
 
-
+version: 2.1
+orbs:
+  codecov: codecov/codecov@1.0.5
