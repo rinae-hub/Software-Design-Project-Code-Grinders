@@ -5,7 +5,8 @@ orbs:
   # Declare a dependency on the welcome-orb
  
   welcome: circleci/welcome-orb@0.4.1
-  
+  codecov: codecov/codecov@1.0.5
+
 # Orchestrate or schedule a set of jobs
 workflows:
   # Name the workflow "welcome"
@@ -19,5 +20,4 @@ after_success:
   -bash <(curl -s https://codecov.io/bash) 
 
 
- orbs:
-  codecov: codecov/codecov@1.0.5
+
