@@ -1,0 +1,75 @@
+{% load static %}
+<html>
+   <head>
+       <title>Code Grinders</title>
+       <link rel="stylesheet" type="text/css" href="{% static 'css/graph1.css' %}">
+   </head>
+   <body>
+
+         <header class="header">
+
+            <div class="logo">
+                     <h1><span>aná</span>lysi</h1>
+                 </div>
+
+        <ul class="nav-area">
+            <li><a href="{% url 'logout1' %}?next={% url 'home' %}"> Logout</a></li>
+        </ul>
+    </div>
+
+         </header>
+
+<div class = "wrapper">
+    <div class="container1">
+         <div class="graph1">
+             <a href="#"><img src="/static/css/graph1.png" alt=""></a>
+         </div>
+         <div class="para">
+              <h1>REGISTRATION FROM 2008 TO 2018</h1>
+              <p>
+                  On average the as per the analysis of the data
+                  collected every year from the year 2008 to 2018,the number of students
+                  enrolled in The University of the Witwatersrand is 13023.In all of those
+                  intakes the university has recorded the highest intake in the 2008 academic year
+                  with 1953 students registered and recorded the lowest intake in the year 2009 with 1044
+                  students registered.
+              </p>
+         </div>
+    </div>
+    <div class="container1">
+           <div class="graph2">
+             <a href="#"><img src="/static/css/graph2.png" alt=""></a>
+           </div>
+           <div class="para2">
+              <h2>NUMBER OF DEREGISTERED STUDENTS FROM 2008 TO 2018</h2>
+              <p2>
+                  On average the as per the analysis of the data
+                  collected every year from the year 2008 to 2018,the number of students
+                  deregistered from The University of the Witwatersrand is 1302.In all of those
+                  deregistraions the university has recorded the highest number of students leaving in the 2008
+                  academic year
+                  with 5169 students deregistered and recorded the lowest number of student leaving in the year 2009 with 310
+                  students deregistered.
+              </p2>
+           </div>
+    </div>
+    <div class="container3">
+          <div class="graph3">
+             <a href="#"><img src="/static/css/graph3.png" alt=""></a>
+         </div>
+          <div class="para3">
+              <h2>NUMBER OF STUDENTS EACH DEGREE STREAMLINE FROM 2008 TO 2018</h2>
+              <p3>
+                  On average the as per the analysis of the data
+                  collected every year from the year 2008 to 2018,the number of students
+                  in each degree streamline in The University of the Witwatersrand is  2865.In all of those
+                  streamlines the university has recorded the highest number of students in the Mathematics degree streamline
+                  through out the decade averaging between 30%-36% of the students enrolled each year
+                  and recorded the lowest number of students in the Earth Science degree streamline throuhgout the decade
+                  averaging between 14%-17% 0f the students enrolled each year.
+              </p3>
+          </div>
+    </div>
+</div>
+    </body>
+</html>

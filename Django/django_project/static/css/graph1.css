@@ -1,0 +1,100 @@
+@import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
+body{
+  margin: 0;
+  padding: 20px;
+  font-family: sans-serif;
+  height:300vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment:fixed;
+  }
+  header{
+    position:sticky;
+    background-color:#303036;
+    height:14vh;
+    z-index:3;
+    -webkit-background-size:cover;
+    background-size:cover;
+    background-position:center center;
+    width:100%;
+    top:0px;
+}
+.logo {
+    width:75px;
+    float:left;
+    height:auto;
+    color:white;
+    font-family:Arial;
+    margin-left:63px;
+}
+
+.logo h1 span {color:#05f7ff}
+
+
+.nav-area{
+    float:right;
+    list-style:none;
+    margin-top:30px;
+    margin-right:40px
+}
+.nav-area li{
+    display:inline-block;
+}
+.nav-area li a{
+    border:1px solid #fff;
+    color:#f0ffff;
+    text-decoration:none;
+    padding:5px 20px;
+    font-family:poppins;
+    font-size:16px;
+}
+.nav-area li a:hover{
+    background: #f3f3f3;
+    color: #333;
+    box-shadow: 0 0 10px #f3f3f3, 0 0 40px #f3f3f3, 0 0 80px #f3f3f3;
+
+}
+.wrapper{
+     width:auto;
+     height:300vh;
+     margin:auto;
+     width:90%;
+     background-color: rgba(0,0,0, 0.1);
+}
+.graph1 img{
+     position:absolute;
+     margin-left:50%;
+     margin-top:60px;
+     width: 500px;
+}
+.para{
+    position:absolute;
+    width:45%;
+    margin-top:100px;
+}
+.graph2 img{
+     position:absolute;
+     margin-right:50%;
+     margin-top:500px;
+     width: 500px;
+}
+.para2{
+    position:relative;
+    width:45%;
+    top:510px;
+    left:50%;
+}
+
+.graph3 img{
+     position:absolute;
+     margin-left:50%;
+     margin-top:800px;
+     width: 500px;
+}
+.para3{
+    position:absolute;
+    width:45%;
+    margin-top:800px;
+
+}
