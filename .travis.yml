@@ -12,4 +12,4 @@ install:
 
 # run test scripts
 script:
-- python manage.py test
+- python DJANGO/django_project/manage.py test
