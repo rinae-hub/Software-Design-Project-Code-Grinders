@@ -7,8 +7,8 @@ env:
 
 # install dependencies
 install:
-##- pip install -r requirements.txt
+#- pip install -r requirements.txt
 
 # run test scripts
 script:
-##- python manage.py test
+#- python manage.py test
