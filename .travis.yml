@@ -4,11 +4,12 @@ python:
 # setting up the environment
 env:
 - DJANGO_VERSION = 3.0.4
+- DB = db.sqlite3
 
 # install dependencies
 install:
-#- pip install -r requirements.txt
+- pip install -r requirements.txt
 
 # run test scripts
 script:
-#- python manage.py test
+- python manage.py test
