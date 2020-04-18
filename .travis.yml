@@ -1,0 +1,14 @@
+language: python
+python:
+- "3.8.2"
+# setting up environment
+env:
+- DJANGO_VERSION = 3.0.4
+
+# install dependencies
+install:
+##- pip install -r requirements.txt
+
+# run test scripts
+script:
+##- python manage.py test
