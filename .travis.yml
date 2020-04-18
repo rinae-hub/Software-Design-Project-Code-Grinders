@@ -3,8 +3,8 @@ python:
 - "3.8.2"
 # setting up the environment
 env:
-- DJANGO_VERSION = 3.0.4
-- DB = db.sqlite3
+#- DJANGO_VERSION = 3.0.4
+#- DB = db.sqlite3
 
 # install dependencies
 install:
