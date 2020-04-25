@@ -15,7 +15,7 @@ install:
 # run test scripts
 script:
 
-- coverage run  --source=accounts,pages manage.py test
+- coverage manage.py test
 
 after_success:
 -coveralls
