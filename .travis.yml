@@ -10,8 +10,13 @@ python:
 install:
 - pip install -r requirements.txt
 - pip install django-crispy-forms
+- pip install coveralls
 
 # run test scripts
 script:
+- coverage run --source=./ manage.py test
 
-- python manage.py test
+after_success:
+ coveralls
+
+
