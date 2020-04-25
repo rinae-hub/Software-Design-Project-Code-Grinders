@@ -15,6 +15,7 @@ install:
 # run test scripts
 before_script:
 -set DJANGO_SETTINGS_MODULE= django_project.settings
+
 script:
 
 - python manage.py test
