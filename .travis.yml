@@ -4,16 +4,17 @@ python:
 -  "3.8"
 -  "3.7"
 
-env:
 
 # install dependencies
 install:
+
 - pip install -r requirements.txt
 - pip install django-crispy-forms
 
 
 # run test scripts
-before_script:
+before-script:
+
 -set DJANGO_SETTINGS_MODULE= django_project.settings
 
 script:
