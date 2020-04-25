@@ -1,15 +1,17 @@
 language: python
+
 python:
-- "3.8.2"
-# setting up the environment
+-  "3.8"
+-  "3.7"
 env:
-#- DJANGO_VERSION = 3.0.4
-#- DB = db.sqlite3
 
 # install dependencies
 install:
 - pip install -r requirements.txt
+- pip install django-crispy-forms
+
 
 # run test scripts
 script:
-- python DJANGO/django_project/manage.py test
+
+- python manage.py test
