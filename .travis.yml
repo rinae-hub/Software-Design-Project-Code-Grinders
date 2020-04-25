@@ -1,20 +1,16 @@
 language: python
 
 python:
--  "3.8"
--  "3.7"
-
-env:
-
-
+- "3.8"
+- "3.7"
+- "3.6"
+- "3.5"
 
 # install dependencies
 install:
 - pip install -r requirements.txt
 - pip install django-crispy-forms
 
-before_script:
--DJANGO_SETTINGS_MODULE=django_project.settings
 # run test scripts
 script:
 
