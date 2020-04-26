@@ -14,7 +14,7 @@ install:
 
 # run tests with coverage
 script:
-- coverage run --source=./ manage.py test
+- coverage run --source=./ manage.py test django_project
 
 after_success:
  coveralls
