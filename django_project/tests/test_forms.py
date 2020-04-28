@@ -1,6 +1,7 @@
 from django.test import SimpleTestCase
 from accounts.forms import UserRegisterForm
 
+#testing the UserRegistragionForm
 class TestForms(SimpleTestCase):
     allow_database_queries = True
     #Valid form data
