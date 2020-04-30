@@ -48,3 +48,18 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response, 'accounts/register1.html')
 
     ## post test_register_view still missing
+    def test_register_view_POST(self):
+        client=Client()
+        form=UserRegisterForm()
+        response=client.post(reverse('register1'),data={
+        'username':"TAS",
+        'email':"readEveryday@indo.co.za",
+        'password1':"postcorona",
+        'password2':"postcorona"
+        })
+        self.assertRedirects(response,
+        reverse('login1'),
+        status_code=302,
+        target_status_code=200,
+        fetch_redirect_response=False
+        )
