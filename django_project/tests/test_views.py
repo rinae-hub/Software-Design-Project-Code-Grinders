@@ -48,7 +48,7 @@ class TestViews(TestCase):
         self.assertEquals(response.status_code,200)
         self.assertTemplateUsed(response, 'accounts/register1.html')
 
-    ## post test_register_view still missing
+    
     def test_register_view_POST(self):
         client=Client()
         form=UserRegisterForm()
