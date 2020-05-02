@@ -23,7 +23,7 @@ body{
 header{
     position:sticky;
     background-color:#303036;
-    height:14vh;
+    height:10vh;
     z-index:3;
     -webkit-background-size:cover;
     background-size:cover;
