@@ -4,7 +4,7 @@ from accounts.forms import UserRegisterForm
 #testing the UserRegistragionForm
 class TestForms(SimpleTestCase):
     allow_database_queries = True
-    #Valid form data
+    
     def test_UserRegisterForm_valid_data(self):
         form = UserRegisterForm(data = {'username':"qwert04",
         'email':"coverCode@codegrinders.co.za",
