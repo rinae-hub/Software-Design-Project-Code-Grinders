@@ -1,47 +1,42 @@
-<!DOCTYPE html>
-{%load static%}
-{%load crispy_forms_tags%}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-       <link rel="stylesheet" href="https://stachpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/login1.css' %}">
-</head>
-<body>
-<header class="header">
-         <div class="logo">
-                     <h1><span>aná</span>lysi</h1>
-                 </div>
-</header>
-<div class="wrapper">
-{%if messages%}
-     {%for message in messages%}
-          <div class="alert alert-{{ message.tag }}">
-              {{ message }}
-          </div>
-     {%endfor%}
-{%endif%}
+{% extends 'base.html'%} {%load static%} {%load crispy_forms_tags%} {%block title%} Login {%endblock%}
 
-<div class="content-section">
-<form method="POST">
-    {%csrf_token%}
-    <fieldset class="form-group">
-        <legend class="border-bottom mb-4">Log In</legend>
-        {{form|crispy}}
-    </fieldset>
-    <div class="form-group1">
-        <button class="btn" type="submit">Login</button>
+{%block links%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login1.css' %}">
+{%endblock%}
+
+{%block nav%}
+<ul class="nav-area">
+ <li><a href="home">Home</a></li>
+<li><a href="#"><i class="fa fa-info-circle"></i>About</a></li>
+</ul>
+{%endblock%}
+
+{%block content%}
+<section>
+    <div class="wrapper">
+        {%if messages%} {%for message in messages%}
+        <div class="alert alert-{{ message.tag }}">
+            {{ message }}
+        </div>
+        {%endfor%} {%endif%}
+
+        <div class="content-section">
+            <form method="POST">
+                {%csrf_token%}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-2">Log In</legend>
+                    {{form|crispy}}
+                </fieldset>
+                <div class="form-group1">
+                    <button class="btn" type="submit">Login</button>
+                </div>
+            </form>
+            <div class="border-top pt-3">
+                <small class="text-muted">
+                Need an account? <a class="ml-2" href="{% url 'register1' %}">Sign Up Now</a>
+            </small>
+            </div>
+        </div>
     </div>
-</form>
-    <div class="border-top pt-3">
-        <small class="text-muted">
-            Need an account? <a class="ml-2" href="{% url 'register1' %}">Sign Up Now</a>
-        </small>
-    </div>
-</div>
-</div>
-</body>
-</html>
+</section>
+{%endblock%}

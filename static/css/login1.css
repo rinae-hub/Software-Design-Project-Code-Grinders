@@ -1,71 +1,41 @@
-html,
 body{
-  height:100%;
-  margin: 0;
-  padding: 20px;
-  font-family: sans-serif;
-  background: url(this.jpg) no-repeat;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment:fixed;
+    margin:0;
+    padding:0;
+}
+section{
+    padding:80px;
+    height:800px;
+}
+.wrapper{
+     border:3px solid #808080;
+     width:auto;
+     height:auto;
+     margin:auto;
+     background-color: rgba(255, 255, 255, 0.7);
+     width:90%;
 }
 .content-section{
-   margin-top: 100px;
+   padding:40px;
 }
 .form-group{
      width:50%;
 }
 .form-group1 .btn{
-   color:black;
-   font-size:1em;
+   color:white;
 
 }
 .text-muted{
-color:red;
+color:black;
 }
 .ml-2{
 color:red;
 }
 .border-bottom{
-color:black;
+text-shadow:-1px 1px 0 #000,
+                1px 1px 0 #000,
+                1px -1px 0 #000;
+               -1px -1px 0 #000;
+   color:#0000000;
 font-family:Arial;
-font-size:2em;
-}
-
-header{
-    position:sticky;
-    background-color:#303036;
-    height:14vh;
-    z-index:3;
-    -webkit-background-size:cover;
-    background-size:cover;
-    background-position:center center;
-    width:100%;
-    top:0px;
-}
-.wrapper{
-     width:auto;
-     height:auto;
-     margin:auto;
-
-     width:90%;
-}
-.logo {
-    width:75px;
-    float:left;
-    height:auto;
-    color:white;
-    font-family:Arial;
-    margin-left:63px;
-}
-
-.logo h1 span {color:#05f7ff}
-.textbox{
-  width: 100%;
-  overflow: hidden;
-  font-size: 20px;
-  padding: 8px 0;
-  margin: 8px 0;
-  border-bottom: 1px solid #808080;
+font-size:3em;
 }
