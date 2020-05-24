@@ -1,0 +1,83 @@
+body{
+    margin:0;
+    padding:0;
+
+}
+section{
+    padding:80px;
+    height:550px;
+}
+.welcome{
+     background-color: rgba(0,0,0, 0.5);
+    width:100%;
+    align:center;
+    height:250px;
+    top:200px;
+    text-align:center;
+    padding:40px;
+}
+.code{
+    color:#f9f5ec;
+     width:100%;
+     text-shadow: white 0px 0px 10px;
+}
+.code h1{
+   text-align:center;
+   text-shadow:-1px 1px 0 #000,
+                1px 1px 0 #000,
+                1px -1px 0 #000;
+               -1px -1px 0 #000;
+   color:#0000000;
+   text-transform:uppercase;
+   font-size:80px;
+}
+.code h1 span{color:#05f7ff}
+.welcome a:hover{
+    background: #f3f3f3;
+    color: #333;
+    box-shadow: 0 0 10px #f3f3f3, 0 0 40px #f3f3f3, 0 0 80px #f3f3f3;
+}
+
+.reviews{
+    display:flex;
+    flex-direction:row;
+}
+.review{
+   border:1px solid white;
+   border-radius: 50px;
+   text-align:center;
+   img-align:center;
+   background-image:url(this.jpg);
+   margin:auto;
+   height:350px;
+}
+.review img{
+    border:1px solid #fff;
+    border-radius:40px;
+    width:100px;
+}
+
+.register{
+   align:center;
+   border:1px solid #fff;
+   border-radius: 25px;
+   padding: 15px 25px;
+   text-decoration:none;
+   text-transform:uppercase;
+   font-size:14px;
+   top:300px;
+   left:50%;
+   margin-left:620px;
+   margin-top:50px;
+   display:inline-block;
+   color:#000000;
+   background-color: #00ffff;
+   animation: blinkingBackground 1s infinite;
+}
+@keyframes blinkingBackground{
+		0%		{ background-color: #FFFFFF;}
+		25%		{ background-color: #FFDEAD;}
+		50%		{ background-color: #F0FFF0;}
+		75%		{ background-color: #ffd700;}
+		100%    { background-color: #FFE4E1;}
+		}

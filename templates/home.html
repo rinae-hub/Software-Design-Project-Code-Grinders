@@ -1,0 +1,59 @@
+{% extends 'base.html'%}
+{%load static%}
+
+{%block title%}
+   Home
+{%endblock%} >
+
+{%block links%}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+{%endblock%}
+
+
+{%block nav%}
+<ul class="nav-area">
+     <li><a href="login">Login</a></li>
+     <li><a href="register">Register</a></li>
+     <li><a href="#"><i class="fa fa-info-circle"></i>About</a></li>
+</ul>
+{%endblock%}
+
+{%block content%}
+<section>
+    <div class="welcome">
+         <div class = "code">
+             <h1><span>aná</span>lysi</h1>
+             <p>We are a creative team of 3rd year Computer Science students and we can make your life easier by
+                 make it more undemanding to view and analyse your big data in style.Let us deal with your big data.
+             </p>
+         </div>
+    </div>
+</section>
+<section class = "reviews">
+    <div>
+         <div class="review">
+             <img src="static/images/me.jpg" alt="">
+             <p>I 100% recommend their services,they are very good at their jobs and treat their customers with the
+             respect they need.I got what I needed and more,I am beyond satisfied with my data analysis.</p>
+         </div>
+    </div>
+    <div>
+        <div class="review">
+             <img src="static/images/me.jpg" alt="">
+             <p>I 100% recommend their services,they are very good at their jobs and treat their customers with the
+             respect they need.I got what I needed and more,I am beyond satisfied with my data analysis.</p>
+         </div>
+    </div>
+
+    <div>
+        <div class="review">
+             <img src="static/images/me.jpg" alt="">
+             <p>I 100% recommend their services,they are very good at their jobs and treat their customers with the
+             respect they need.I got what I needed and more,I am beyond satisfied with my data analysis.</p>
+         </div>
+    </div>
+</section>
+    <div class="register">
+        <a href="register">WE ARE THE BEST, REGISTER NOW!</a>
+    </div>
+{%endblock%}

@@ -1,0 +1,41 @@
+body{
+    margin:0;
+    padding:0;
+}
+section{
+    padding:80px;
+    height:600px;
+}
+.wrapper{
+     border:1px solid #808080;
+     width:auto;
+     height:auto;
+     margin:auto;
+     background-color: rgba(255, 255, 255, 0.7);
+     width:90%;
+}
+.content-section{
+   padding:40px;
+}
+.form-group{
+     width:50%;
+}
+.form-group1 .btn{
+   color:white;
+
+}
+.text-muted{
+color:black;
+}
+.ml-2{
+color:red;
+}
+.border-bottom{
+text-shadow:-1px 1px 0 #000,
+                1px 1px 0 #000,
+                1px -1px 0 #000;
+               -1px -1px 0 #000;
+   color:#0000000;
+font-family:Arial;
+font-size:2em;
+}
