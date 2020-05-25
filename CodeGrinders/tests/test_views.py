@@ -22,15 +22,6 @@ class TestViews(TestCase):
         self.assertEquals(response.status_code,200)
         self.assertTemplateUsed(response, 'register.html')
     
-    def redirect_view(self):
-        client =Client()
-        response= client.get(reverse('home'))
-        self.assertRedirects(response,
-        reverse('home'),
-        status_code=302,
-        target_status_code=200,
-        fetch_redirect_response=False
-        )
 
     def test_register_view_POST(self):
         client=Client()
