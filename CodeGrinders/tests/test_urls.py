@@ -11,9 +11,9 @@ class TestUrls(SimpleTestCase):
         self.assertEquals(resolve(url).func,register_view)
 
     # testing whether the url to login-view is working
-    def test_login_url_is_resolved(self):
-        url = reverse('login')
-        self.assertEquals(resolve(url).func.view_class,django.contrib.auth.views.LoginView)
+    #def test_login_url_is_resolved(self):
+        #url = reverse('login')
+        #self.assertEquals(resolve(url).func.view_class,django.contrib.auth.views.LoginView)
 
 
     #testing whether the url to logout-view is working
