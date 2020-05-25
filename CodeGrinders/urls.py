@@ -19,6 +19,6 @@ from django.contrib.auth import views as auth_views
 from django.contrib import messages
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('adminCode/', admin.site.urls),
     path('',include('web.urls'))
 ]
