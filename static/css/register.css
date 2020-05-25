@@ -3,23 +3,37 @@ body{
     padding:0;
 }
 
-.section{
-    padding:800px;
-    height:600px;
-}
-.wrapper{
-     border:1px solid #808080;
-     height:auto;
-     margin:auto;
-     width:90%;
-     background-color: rgba(255, 255, 255, 0.7);
-}
-.content-section{
-   margin-top: 90px;
-   margin-left:50px;
-   margin-right:100px;
+section{
+    padding:40px;
+    height:700px;
+    width:900px;
 }
 .form-group{
-     width:80%;
-     color:#808080;
+     width:85%;
+}
+.wrapper{
+    height:auto;
+    margin:auto;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 5px solid transparent;
+    border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+    border-image-slice: 1;
+
+}
+.content-section{
+ padding:40px;
+}
+.border-bottom{
+text-shadow:-1px 1px 0 #000,
+                1px 1px 0 #000,
+                1px -1px 0 #000;
+               -1px -1px 0 #000;
+   color:#0000000;
+font-family:Arial;
+font-size:2em;
+}
+.form-group1 btn{
+    border: 5px solid transparent;
+    border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+    border-image-slice: 1;
 }

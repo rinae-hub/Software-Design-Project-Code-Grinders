@@ -19,33 +19,37 @@ Register
 
 {%block content%}
 <section>
-<div class="wrapper">
-    {%if messages%}
-         {%for message in messages%}
-              <div class="alert alert-{{ message.tag }}">
-                  {{ message }}
-              </div>
-         {%endfor%}
+    <div class="wrapper">
+        {%if messages%}
+             {%for message in messages%}
+                  <div class="alert alert-{{ message.tag }}">
+                      {{ message }}
+                  </div>
+             {%endfor%}
 
-    {%endif%}
-    <div class="content-section">
-    <form method="POST">
-        {%csrf_token%}
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Become a code grinder today</legend>
-            {{form|crispy}}
-        </fieldset>
-        <div class="form-group1">
-            <button class="btn" type="submit">Sign up</button>
-        </div>
-    </form>
-        <div class="border-top pt-3">
-            <small class="text-muted">
-                Already have an account? <a class="ml-2" href="{% url 'login' %}">Sign in</a>
-            </small>
+        {%endif%}
+
+        <div class="content-section">
+            <form method="POST" >
+                {%csrf_token%}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4" style="color:black;">Become a code grinder today</legend>
+                    {{form|crispy}}
+                </fieldset>
+
+                <div class="form-group1">
+                    <button class="btn" type="submit" style="color:white; ">Sign up</button>
+                </div>
+
+            </form>
+
+            <div class="border-top pt-3">
+                <small class="text-muted" style="color:black; font-size:15px;">
+                    Already have an account? <a class="ml-2" href="{% url 'login' %}" style="color:red;">Sign in</a>
+                </small>
+            </div>
         </div>
     </div>
-</div>
 
 </section>
 {%endblock%}
