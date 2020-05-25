@@ -23,6 +23,8 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response, 'register.html')
     
     def redirect_view(self):
+        client =Client()
+        response= client.get(reverse('home'))
         self.assertRedirects(response,
         reverse('home'),
         status_code=302,
