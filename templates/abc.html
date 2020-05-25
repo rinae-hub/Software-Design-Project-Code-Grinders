@@ -14,8 +14,7 @@
 
 {%block nav%}
 <ul class="nav-area">
-     <li><a href="logout">Logout</a></li>
-
+    <li><a href="{% url 'home' %}">Logout</a></li>
 </ul>
 {%endblock%}
 
@@ -43,7 +42,7 @@
                 padding-left:80px;
                 padding-top:40px;
                 height:320px;
-                width:1300px;
+                width:1308px;
                 background:linear-gradient(-45deg,#EE7752,#E73C7E,#23A6D5,#23D5AB);">
 
     <br>
@@ -407,7 +406,7 @@ getData();
                         title: {
                             display: true,
                             text: 'UNIVERSITY OF THE WITWATERSRAND',
-                            fontSize: 25
+                            fontSize: 44
                         },
            scales: {
                         xAxes: [{

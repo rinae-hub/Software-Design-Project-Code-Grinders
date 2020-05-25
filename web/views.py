@@ -26,3 +26,9 @@ def register_view(request):
 
         form = UserRegisterForm()
     return render(request, 'register.html', {'form': form})
+
+
+def redirect_view(request):
+    response = redirect('home/')
+    return response
+
