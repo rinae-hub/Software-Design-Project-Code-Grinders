@@ -1,17 +1,22 @@
-{% extends 'base.html'%} {%load static%} {%load crispy_forms_tags%} {%block title%} Login {%endblock%}
-
-{%block links%}
-<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+{% extends 'base.html'%}
+{%load static%}
+{%load crispy_forms_tags%}
+{%block title%}
+Login
 {%endblock%}
 
-{%block nav%}
+{% block links %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block nav%}
 <ul class="nav-area">
- <li><a href="home">Login</a></li>
+
 <li><a href="#"><i class="fa fa-info-circle"></i>About</a></li>
 </ul>
-{%endblock%}
+{% endblock %}
 
-{%block content%}
+{% block content %}
 <section>
     <div class="wrapper">
         {%if messages%} {%for message in messages%}
@@ -21,18 +26,18 @@
         {%endfor%} {%endif%}
 
         <div class="content-section">
-            <form method="POST">
+            <form method="POST" style="width:1500px;" >
                 {%csrf_token%}
-                <fieldset class="form-group">
-                    <legend class="border-bottom mb-2">Log In</legend>
+                <fieldset class="form-group" style="color:black;">
+                    <legend class="border-bottom">Log In</legend>
                     {{form|crispy}}
                 </fieldset>
-                <div class="form-group1">
+                <div class="form-group1" >
                     <button class="btn" type="submit">Login</button>
                 </div>
             </form>
             <div class="border-top pt-3">
-                <small class="text-muted">
+                <small class="text-muted" style="color:black; font-size:15px">
                 Need an account? <a class="ml-2" href="{% url 'register' %}">Sign Up Now</a>
             </small>
             </div>
