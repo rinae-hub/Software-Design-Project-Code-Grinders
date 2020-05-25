@@ -1,11 +1,12 @@
 @import "https://use.fontawesome.com/releases/v5.5.0/css/all.css";
 html,
 body{
-  height:auto;
   margin: 0;
-  padding: 20px;
+  padding-top:0px;
+  padding-left:0px;
+  padding-right:0px;
   font-family: sans-serif;
-  height:175vh;
+  height:200vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

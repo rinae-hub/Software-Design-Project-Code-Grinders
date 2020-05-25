@@ -20,36 +20,41 @@
 {%endblock%}
 
 {% block content %}
-
+<div style="padding:10px">
 <h1 style="text-align:center;
-text-shadow: white 0px 0px 10px;
-   text-shadow:-4px 4px 0 #C0EBE9,
+    text-shadow: white 0px 0px 10px;
+    text-shadow:-4px 4px 0 #C0EBE9,
                 2px 2px 0 #C0EBE9,
                 2px -2px 0 #C0EBE9;
                -2px -2px 0 #C0EBE9;
-   color:#808080;
-   padding-left:150px;
-   padding-right:150px;
-   text-transform:uppercase;
-   font-size:40px;">ENJOY THE BEST VISUALISATION OF UNIVERSITY OF THE WIWATERSRAND STUDENTS INFORMATION </h1>
+    color:black;
+    text-transform:uppercase;
+    border: 2px solid transparent;
+    border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+    border-image-slice: 1;
+    font-size:40px;">ENJOY THE BEST VISUALISATION OF UNIVERSITY OF THE WIWATERSRAND STUDENTS INFORMATION </h1>
+</div>
 <br><br>
 <div style="padding-left:150px;">
 <form  style=" color:black;
-                border: 5px solid transparent;
+                border: 2px solid transparent;
                 border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
                 border-image-slice: 1;
-                padding-left:50px;
+                padding-left:80px;
+                padding-top:40px;
                 height:320px;
                 width:1300px;
                 background:linear-gradient(-45deg,#EE7752,#E73C7E,#23A6D5,#23D5AB);">
 
     <br>
     <img src="{% static 'images/wits.png' %}" alt="Simply Easy Learning"
-         style="width:250px; position:relative;float:right;">
+         style="width:220px; position:relative;float:right;">
     <select id="myInput" name="number of students" style="background:pink;
+                                                            border: 2px solid transparent;
+                                                            border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+                                                            border-image-slice: 1;
                                                             height:40px;
-                                                            border: 2px solid #C0EBE9;
-                                                            border-radius: 10px;">
+                                                            ">
     <option value="students"style="">Number of students</option>
     <option value="Gender:Male"style="">Number of Male students</option>
     <option value="Gender:Female"style="">Number of Female students</option>
@@ -62,8 +67,10 @@ text-shadow: white 0px 0px 10px;
   </select><br><br>
 
       <select id="myInput2" name="Type" style="background:pink;height:40px;
-                                               border: 2px solid #C0EBE9;
-                                               border-radius: 10px;">
+                                                border: 2px solid transparent;
+                                                border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+                                                border-image-slice: 1;
+                                               ">
     <option value="bar" style="color:red;">Bar chart</option>
     <option value="line">Line Graph</option>
     <option value="pie">Pie Chart</option>
@@ -74,14 +81,17 @@ text-shadow: white 0px 0px 10px;
     <div style="display:inline;">
 
     <button id="click" type="button" onclick="all();" style="background:#C0EBE9;
-                                                                  border: 3px solid #808080;
-                                                                  height:30px;
-                                                                  border-radius: 10px;">Display</button>
+                                                            border: 2px solid transparent;
+                                                            border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+                                                            border-image-slice: 1;
+                                                            height:30px;">Display</button>
     <br><br>
     <button id="click1" type="button" onclick="refresh()" style="background:#C0EBE9;
-                                                                 height:30px;
-                                                                 border: 3px solid #808080;
-                                                                 border-radius: 10px;">Refresh</button>
+                                                                height:30px;
+                                                                border: 2px solid transparent;
+                                                                border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+                                                                border-image-slice: 1;
+                                                                 ">Refresh</button>
   </div>
       <br><br>
 </form><br><br>
@@ -91,7 +101,7 @@ text-shadow: white 0px 0px 10px;
 
 <div style="padding-right:150px;padding-left:150px;padding-bottom:150px;">
 <canvas id="myChart" style="background-color:rgba(0,0,0, 0.05);
-                            border: 5px solid transparent;
+                            border: 2px solid transparent;
                             border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
                             border-image-slice: 1;
                             height:756px;
@@ -351,17 +361,18 @@ getData();
                                 label: 'no.std',
                                 data: yvalues,
                                 backgroundColor: [
-                                    'rgba(0,255,255,0.5)',
-                                    'rgba(51,204,51,0.5)',
-                                    'rgba(204,102,153,0.5)',
-                                    'rgba(255,255,51,0.5)',
-                                    'rgba(255,0,0,0.5)',
-                                   'rgba(255, 99, 132, 0.5)',
-                                    'rgba(54, 162, 235, 0.5)',
-                                    'rgba(255, 206, 86, 0.5)',
-                                    'rgba(75, 192, 192, 0.5)',
-                                    'rgba(153, 102, 255, 0.5)',
-                                    'rgba(255, 159, 64, 0.5)'
+
+                                   '#32cd32',
+                                    'rgba(255,128,0)',
+                                    'rgba(255,255,0)',
+                                    '#eeeed1',
+                                    '#171717',
+                                   'rgba(255,0,255)',
+                                    'rgba(255,0,128)',
+                                    '#bf3eff',
+                                    'rgba(0,0,255)',
+                                    '#ee9572',
+                                    'rgba(255,0,0)'
 
 
                                 ],
@@ -376,17 +387,18 @@ getData();
                                     }
                                 },
                                 borderColor: [
-                                    'yellow',
-                                    'yellow',
-                                    'yellow',
-                                    'yellow',
-                                    'yellow',
-                                    'yellow',
-                                    'yellow',
-                                    'yellow',
-                                    'yellow',
-                                    'yellow',
-                                    'yellow',
+                                    'black',
+                                    'black',
+                                    'black',
+                                    'black',
+                                    'black',
+                                    'black',
+                                    'black',
+                                    'black',
+                                    'black',
+                                    'black',
+                                    'black',
+
                                 ],
                                 borderWidth: 1
                             }]

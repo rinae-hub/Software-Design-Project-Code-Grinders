@@ -1,11 +1,8 @@
-body{
-    margin:0;
-    padding:0;
-}
+
 
 section{
-    padding:40px;
-    height:700px;
+    padding:100px;
+    height:800px;
     width:900px;
 }
 .form-group{
@@ -15,7 +12,7 @@ section{
     height:auto;
     margin:auto;
     background-color: rgba(255, 255, 255, 0.7);
-    border: 5px solid transparent;
+    border: 3px solid transparent;
     border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
     border-image-slice: 1;
 
@@ -33,7 +30,7 @@ font-family:Arial;
 font-size:2em;
 }
 .form-group1 btn{
-    border: 5px solid transparent;
+    border: 3px solid transparent;
     border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
     border-image-slice: 1;
 }
