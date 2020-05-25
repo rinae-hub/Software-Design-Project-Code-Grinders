@@ -21,6 +21,7 @@ class TestViews(TestCase):
         response=client.get(reverse('register'))
         self.assertEquals(response.status_code,200)
         self.assertTemplateUsed(response, 'register.html')
+    
 
     def test_register_view_POST(self):
         client=Client()
@@ -37,3 +38,4 @@ class TestViews(TestCase):
         target_status_code=200,
         fetch_redirect_response=False
         )
+

@@ -3,6 +3,7 @@ from web.forms import UserRegisterForm
 
 class TestForms(TestCase):
 
+    #test registration page
     def test_registerform_valid_data(self):
         form = UserRegisterForm(data={
         'username' : 'TAS',
