@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{%load crispy_forms_tags%}
+<head>
+
+ </head>
+    <h1>Home</h1>
+<body>
+
+    {% block content%}
+<div>
+
+    <form  id='InputsForm' style="width:500px">
+        <table>
+            {% csrf_token %}
+            {{ form }}
+        </table>
+        <input id='SubmitButton' type="submit" value="Generate Graph">
+    </form>
+</div>
+
+<div id="myDiv">
+
+</div>
+
+</body>
+
+<script type="text/javascript">
+  var trace1,trace2;
+  var data
+  $('#SubmitButton').click(function (event) {
+  event.preventDefault(); //so that we stop normal form submit.
+  console.log($('form#InputsForm').serializeArray());
+      $.ajax({
+        type: 'POST',
+        url: "{% url 'ajax'%}",
+        dataType: 'json',
+        data: $('form#InputsForm').serializeArray(),
+        success: function (data) {
+          console.log(data['dependent_extra_values']);
+          trace1 = {
+                       name: data['name_1'],
+                       x: data['independent_values'],
+                       y: data['dependent_values'],
+                       type:data['graph_type'],
+                       line: {
+                         color: data['colours']
+                       }
+                     };
+            trace2 = {
+              name: data['name_2'],
+             x: data['independent_values'],
+             y: data['dependent_extra_values'],
+             type:data['graph_type'],
+             line: {
+               color: '#00FFFF'
+             }
+           };
+
+                  var data = [trace1,trace2];
+
+                    layout = {
+                       showlegend: true,
+                       xaxis: {
+                         title:{
+                           text : 'Years'
+
+                         },
+                         autotick: false,
+                         dtick: 1,
+                         ticklen:0.5,
+                         tickwidth: 4,
+                         tickcolor: "#000"
+                       },
+                      yaxis:{
+                         title:{
+                           text: 'Number of Students'
+                         }
+                       }
+
+                    };
+
+
+                     Plotly.newPlot('myDiv', data, layout, {
+                       responsive: true,
+                       displaylogo: false
+                     });
+        }
+      });
+
+    });
+
+ </script>
+ {% endblock content %}
