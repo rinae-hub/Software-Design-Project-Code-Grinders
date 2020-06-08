@@ -8,7 +8,7 @@ import django.contrib.auth.views
 #    path('graph/', views.graph, name='graph'),tested
 #    path('',views.home_view, name='home'), tested
 #    path('home/', views.redirect_view), 
-#    path('ajax/', views.ajax_generate_graph, name='ajax'), tested
+#    path('ajax/', views.ajax_generate_graph, name='ajax'),
 #    path('register/', views.register_view, name='register')tested
 #]
 
