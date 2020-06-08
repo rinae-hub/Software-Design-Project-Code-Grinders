@@ -3,6 +3,15 @@ from django.urls import reverse, resolve
 from web.views import register_view,abc, home_view
 import django.contrib.auth.views
 
+#urlpatterns = [
+#   path('abc/', views.abc, name='abc'), tested
+#    path('graph/', views.graph, name='graph'),tested
+#    path('',views.home_view, name='home'), tested
+#    path('home/', views.redirect_view), 
+#    path('ajax/', views.ajax_generate_graph, name='ajax'), tested
+#    path('register/', views.register_view, name='register')tested
+#]
+
 
 class TestUrls(SimpleTestCase):
     # testing whether the url to home-view is working
@@ -14,6 +23,14 @@ class TestUrls(SimpleTestCase):
     def test_login_url_is_resolved(self):
         url = reverse('login')
         self.assertEquals(resolve(url).func.view_class,django.contrib.auth.views.LoginView)
+     
+    def test_ajax_url_is_resolved(self):
+        url = reverse('ajax')
+        self.assertEquals(resolve(url).func,ajax_generate_graph)
+        
+    def test_graph_url_is_resolved(self):
+        url = reverse('graph')
+        self.assertEquals(resolve(url).func,ajax_generate_graph)
 
 
     #testing whether the url to logout-view is working
