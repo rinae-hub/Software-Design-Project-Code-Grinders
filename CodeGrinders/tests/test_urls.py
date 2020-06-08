@@ -23,10 +23,7 @@ class TestUrls(SimpleTestCase):
     def test_login_url_is_resolved(self):
         url = reverse('login')
         self.assertEquals(resolve(url).func.view_class,django.contrib.auth.views.LoginView)
-     
-    def test_ajax_url_is_resolved(self):
-        url = reverse('ajax')
-        self.assertEquals(resolve(url).func,ajax_generate_graph)
+    
         
     def test_graph_url_is_resolved(self):
         url = reverse('graph')
