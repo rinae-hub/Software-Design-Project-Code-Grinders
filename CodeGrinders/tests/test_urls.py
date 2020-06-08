@@ -24,10 +24,7 @@ class TestUrls(SimpleTestCase):
         url = reverse('login')
         self.assertEquals(resolve(url).func.view_class,django.contrib.auth.views.LoginView)
     
-        
-    def test_graph_url_is_resolved(self):
-        url = reverse('graph')
-        self.assertEquals(resolve(url).func,graph)
+ 
 
 
     #testing whether the url to logout-view is working
