@@ -66,6 +66,185 @@ def ajax_generate_graph(request):
             y2018 = student.objects.filter(RegistrationEnd='2018').filter(Gender='M').count()
             dependent_values.append(y2018)
 
+        elif dependent_variable == 'Biological Science Degree':
+            y2008 = student.objects.filter(RegistrationStart='2008').filter(
+                Streamline='Biological Science Degree').count()
+            dependent_values.append(y2008)
+            y2009 = student.objects.filter(RegistrationStart='2009').filter(
+                Streamline='Biological Science Degree').count()
+            dependent_values.append(y2009)
+            y2010 = student.objects.filter(RegistrationStart='2010').filter(
+                Streamline='Biological Science Degree').count()
+            dependent_values.append(y2010)
+            y2011 = student.objects.filter(RegistrationStart='2011').filter(
+                Streamline='Biological Science Degree').count()
+            dependent_values.append(y2011)
+            y2012 = student.objects.filter(RegistrationStart='2012').filter(
+                Streamline='Biological Science Degree').count()
+            dependent_values.append(y2012)
+            y2013 = student.objects.filter(RegistrationStart='2013').filter(
+                Streamline='Biological Science Degree').count()
+            dependent_values.append(y2013)
+            y2014 = student.objects.filter(RegistrationStart='2014').filter(
+                Streamline='Biological Science Degree').count()
+            dependent_values.append(y2014)
+            y2015 = student.objects.filter(RegistrationStart='2015').filter(
+                Streamline='Biological Science Degree').count()
+            dependent_values.append(y2015)
+            y2016 = student.objects.filter(RegistrationStart='2016').filter(
+                Streamline='Biological Science Degree').count()
+            dependent_values.append(y2016)
+            y2017 = student.objects.filter(RegistrationStart='2017').filter(
+                Streamline='Biological Science Degree').count()
+            dependent_values.append(y2017)
+            y2018 = student.objects.filter(RegistrationStart='2018').filter(
+                Streamline='Biological Science Degree').count()
+            dependent_values.append(y2018)
+
+        elif dependent_variable == 'Mathematics Degree':
+            y2008 = student.objects.filter(RegistrationStart='2008').filter(Streamline='Mathematics Degree').count()
+            dependent_values.append(y2008)
+            y2009 = student.objects.filter(RegistrationStart='2009').filter(Streamline='Mathematics Degree').count()
+            dependent_values.append(y2009)
+            y2010 = student.objects.filter(RegistrationStart='2010').filter(Streamline='Mathematics Degree').count()
+            dependent_values.append(y2010)
+            y2011 = student.objects.filter(RegistrationStart='2011').filter(Streamline='Mathematics Degree').count()
+            dependent_values.append(y2011)
+            y2012 = student.objects.filter(RegistrationStart='2012').filter(Streamline='Mathematics Degree').count()
+            dependent_values.append(y2012)
+            y2013 = student.objects.filter(RegistrationStart='2013').filter(Streamline='Mathematics Degree').count()
+            dependent_values.append(y2013)
+            y2014 = student.objects.filter(RegistrationStart='2014').filter(Streamline='Mathematics Degree').count()
+            dependent_values.append(y2014)
+            y2015 = student.objects.filter(RegistrationStart='2015').filter(Streamline='Mathematics Degree').count()
+            dependent_values.append(y2015)
+            y2016 = student.objects.filter(RegistrationStart='2016').filter(Streamline='Mathematics Degree').count()
+            dependent_values.append(y2016)
+            y2017 = student.objects.filter(RegistrationStart='2017').filter(Streamline='Mathematics Degree').count()
+            dependent_values.append(y2017)
+            y2018 = student.objects.filter(RegistrationStart='2018').filter(Streamline='Mathematics Degree').count()
+            dependent_values.append(y2018)
+
+        elif dependent_variable == 'Physical Science Degree':
+            y2008 = student.objects.filter(RegistrationStart='2008').filter(Streamline='Physical Science Degree').count()
+            dependent_values.append(y2008)
+            y2009 = student.objects.filter(RegistrationStart='2009').filter(Streamline='Physical Science Degree').count()
+            dependent_values.append(y2009)
+            y2010 = student.objects.filter(RegistrationStart='2010').filter(Streamline='Physical Science Degree').count()
+            dependent_values.append(y2010)
+            y2011 = student.objects.filter(RegistrationStart='2011').filter(Streamline='Physical Science Degree').count()
+            dependent_values.append(y2011)
+            y2012 = student.objects.filter(RegistrationStart='2012').filter(Streamline='Physical Science Degree').count()
+            dependent_values.append(y2012)
+            y2013 = student.objects.filter(RegistrationStart='2013').filter(Streamline='Physical Science Degree').count()
+            dependent_values.append(y2013)
+            y2014 = student.objects.filter(RegistrationStart='2014').filter(Streamline='Physical Science Degree').count()
+            dependent_values.append(y2014)
+            y2015 = student.objects.filter(RegistrationStart='2015').filter(Streamline='Physical Science Degree').count()
+            dependent_values.append(y2015)
+            y2016 = student.objects.filter(RegistrationStart='2016').filter(Streamline='Physical Science Degree').count()
+            dependent_values.append(y2016)
+            y2017 = student.objects.filter(RegistrationStart='2017').filter(Streamline='Physical Science Degree').count()
+            dependent_values.append(y2017)
+            y2018 = student.objects.filter(RegistrationStart='2018').filter(Streamline='Physical Science Degree').count()
+            dependent_values.append(y2018)
+
+        elif dependent_variable == 'Earth Science Degree':
+            y2008 = student.objects.filter(RegistrationStart='2008').filter(Streamline='Earth Science Degree').count()
+            dependent_values.append(y2008)
+            y2009 = student.objects.filter(RegistrationStart='2009').filter(Streamline='Earth Science Degree').count()
+            dependent_values.append(y2009)
+            y2010 = student.objects.filter(RegistrationStart='2010').filter(Streamline='Earth Science Degree').count()
+            dependent_values.append(y2010)
+            y2011 = student.objects.filter(RegistrationStart='2011').filter(Streamline='Earth Science Degree').count()
+            dependent_values.append(y2011)
+            y2012 = student.objects.filter(RegistrationStart='2012').filter(Streamline='Earth Science Degree').count()
+            dependent_values.append(y2012)
+            y2013 = student.objects.filter(RegistrationStart='2013').filter(Streamline='Earth Science Degree').count()
+            dependent_values.append(y2013)
+            y2014 = student.objects.filter(RegistrationStart='2014').filter(Streamline='Earth Science Degree').count()
+            dependent_values.append(y2014)
+            y2015 = student.objects.filter(RegistrationStart='2015').filter(Streamline='Earth Science Degree').count()
+            dependent_values.append(y2015)
+            y2016 = student.objects.filter(RegistrationStart='2016').filter(Streamline='Earth Science Degree').count()
+            dependent_values.append(y2016)
+            y2017 = student.objects.filter(RegistrationStart='2017').filter(Streamline='Earth Science Degree').count()
+            dependent_values.append(y2017)
+            y2018 = student.objects.filter(RegistrationStart='2018').filter(Streamline='Earth Science Degree').count()
+            dependent_values.append(y2018)
+
+        elif dependent_variable == 'Unknown Streamline':
+            y2008 = student.objects.filter(RegistrationStart='2008').filter(Streamline='Unknown Streamline').count()
+            dependent_values.append(y2008)
+            y2009 = student.objects.filter(RegistrationStart='2009').filter(Streamline='Unknown Streamline').count()
+            dependent_values.append(y2009)
+            y2010 = student.objects.filter(RegistrationStart='2010').filter(Streamline='Unknown Streamline').count()
+            dependent_values.append(y2010)
+            y2011 = student.objects.filter(RegistrationStart='2011').filter(Streamline='Unknown Streamline').count()
+            dependent_values.append(y2011)
+            y2012 = student.objects.filter(RegistrationStart='2012').filter(Streamline='Unknown Streamline').count()
+            dependent_values.append(y2012)
+            y2013 = student.objects.filter(RegistrationStart='2013').filter(Streamline='Unknown Streamline').count()
+            dependent_values.append(y2013)
+            y2014 = student.objects.filter(RegistrationStart='2014').filter(Streamline='Unknown Streamline').count()
+            dependent_values.append(y2014)
+            y2015 = student.objects.filter(RegistrationStart='2015').filter(Streamline='Unknown Streamline').count()
+            dependent_values.append(y2015)
+            y2016 = student.objects.filter(RegistrationStart='2016').filter(Streamline='Unknown Streamline').count()
+            dependent_values.append(y2016)
+            y2017 = student.objects.filter(RegistrationStart='2017').filter(Streamline='Unknown Streamline').count()
+            dependent_values.append(y2017)
+            y2018 = student.objects.filter(RegistrationStart='2018').filter(Streamline='Unknown Streamline').count()
+            dependent_values.append(y2018)
+
+        elif dependent_variable == 'Female and Qualified':
+            y2008 = student.objects.filter(RegistrationStart='2008').filter(Qualified='Q').filter(Gender='F').count()
+            dependent_values.append(y2008)
+            y2009 = student.objects.filter(RegistrationStart='2009').filter(Qualified='Q').filter(Gender='F').count()
+            dependent_values.append(y2009)
+            y2010 = student.objects.filter(RegistrationStart='2010').filter(Qualified='Q').filter(Gender='F').count()
+            dependent_values.append(y2010)
+            y2011 = student.objects.filter(RegistrationStart='2011').filter(Qualified='Q').filter(Gender='F').count()
+            dependent_values.append(y2011)
+            y2012 = student.objects.filter(RegistrationStart='2012').filter(Qualified='Q').filter(Gender='F').count()
+            dependent_values.append(y2012)
+            y2013 = student.objects.filter(RegistrationStart='2013').filter(Qualified='Q').filter(Gender='F').count()
+            dependent_values.append(y2013)
+            y2014 = student.objects.filter(RegistrationStart='2014').filter(Qualified='Q').filter(Gender='F').count()
+            dependent_values.append(y2014)
+            y2015 = student.objects.filter(RegistrationStart='2015').filter(Qualified='Q').filter(Gender='F').count()
+            dependent_values.append(y2015)
+            y2016 = student.objects.filter(RegistrationStart='2016').filter(Qualified='Q').filter(Gender='F').count()
+            dependent_values.append(y2016)
+            y2017 = student.objects.filter(RegistrationStart='2017').filter(Qualified='Q').filter(Gender='F').count()
+            dependent_values.append(y2017)
+            y2018 = student.objects.filter(RegistrationStart='2018').filter(Qualified='Q').filter(Gender='F').count()
+            dependent_values.append(y2018)
+
+        elif dependent_variable == 'Female and Not Qualified':
+            y2008 = student.objects.filter(RegistrationStart='2008').filter(Qualified='F').filter(Gender='F').count()
+            dependent_values.append(y2008)
+            y2009 = student.objects.filter(RegistrationStart='2009').filter(Qualified='F').filter(Gender='F').count()
+            dependent_values.append(y2009)
+            y2010 = student.objects.filter(RegistrationStart='2010').filter(Qualified='F').filter(Gender='F').count()
+            dependent_values.append(y2010)
+            y2011 = student.objects.filter(RegistrationStart='2011').filter(Qualified='F').filter(Gender='F').count()
+            dependent_values.append(y2011)
+            y2012 = student.objects.filter(RegistrationStart='2012').filter(Qualified='F').filter(Gender='F').count()
+            dependent_values.append(y2012)
+            y2013 = student.objects.filter(RegistrationStart='2013').filter(Qualified='F').filter(Gender='F').count()
+            dependent_values.append(y2013)
+            y2014 = student.objects.filter(RegistrationStart='2014').filter(Qualified='F').filter(Gender='F').count()
+            dependent_values.append(y2014)
+            y2015 = student.objects.filter(RegistrationStart='2015').filter(Qualified='F').filter(Gender='F').count()
+            dependent_values.append(y2015)
+            y2016 = student.objects.filter(RegistrationStart='2016').filter(Qualified='F').filter(Gender='F').count()
+            dependent_values.append(y2016)
+            y2017 = student.objects.filter(RegistrationStart='2017').filter(Qualified='F').filter(Gender='F').count()
+            dependent_values.append(y2017)
+            y2018 = student.objects.filter(RegistrationStart='2018').filter(Qualified='F').filter(Gender='F').count()
+            dependent_values.append(y2018)
+
         elif dependent_variable == 'Female and RegistrationStart':
             y2008 = student.objects.filter(RegistrationStart='2008').filter(Gender='F').count()
             dependent_values.append(y2008)
@@ -115,6 +294,7 @@ def ajax_generate_graph(request):
             dependent_values.append(y2018)
 
             '''Number of students registered each year'''
+
         elif dependent_variable == 'RegistrationStart':
             y2008 = student.objects.filter(RegistrationStart='2008').count()
             dependent_values.append(y2008)
@@ -166,6 +346,7 @@ def ajax_generate_graph(request):
             dependent_values.append(y2018)
 
             '''Number of first year students registered each year'''
+
         elif dependent_variable == 'YearStarted':
             y2008 = student.objects.filter(YearStarted='2008').count()
             dependent_values.append(y2008)
@@ -191,6 +372,32 @@ def ajax_generate_graph(request):
             dependent_values.append(y2018)
 
             '''Determination of second dependent variable'''
+
+        elif dependent_variable == 'No Student Record':
+            y2008 = student.objects.filter(RegistrationStart='2008').filter(Nostudentrrecord =1).count()
+            dependent_values.append(y2008)
+            y2009 = student.objects.filter(RegistrationStart='2009').filter(Nostudentrrecord=1).count()
+            dependent_values.append(y2009)
+            y2010 = student.objects.filter(RegistrationStart='2010').filter(Nostudentrrecord=1).count()
+            dependent_values.append(y2010)
+            y2011 = student.objects.filter(RegistrationStart='2011').filter(Nostudentrrecord=1).count()
+            dependent_values.append(y2011)
+            y2012 = student.objects.filter(RegistrationStart='2012').filter(Nostudentrrecord=1).count()
+            dependent_values.append(y2012)
+            y2013 = student.objects.filter(RegistrationStart='2013').filter(Nostudentrrecord=1).count()
+            dependent_values.append(y2013)
+            y2014 = student.objects.filter(RegistrationStart='2014').filter(Nostudentrrecord=1).count()
+            dependent_values.append(y2014)
+            y2015 = student.objects.filter(RegistrationStart='2015').filter(Nostudentrrecord=1).count()
+            dependent_values.append(y2015)
+            y2016 = student.objects.filter(RegistrationStart='2016').filter(Nostudentrrecord=1).count()
+            dependent_values.append(y2016)
+            y2017 = student.objects.filter(RegistrationStart='2017').filter(Nostudentrrecord=1).count()
+            dependent_values.append(y2017)
+            y2018 = student.objects.filter(RegistrationStart='2018').filter(Nostudentrrecord=1).count()
+            dependent_values.append(y2018)
+
+        # *************************************************************************************************** #
         if dependent_extra_variable == 'Female and RegistrationEnd':
             y2008 = student.objects.filter(RegistrationEnd='2008').filter(Gender='F').count()
             dependent_values_1.append(y2008)
@@ -328,6 +535,7 @@ def ajax_generate_graph(request):
             dependent_values_1.append(y2018)
 
             '''Number of students registered each year'''
+
         elif dependent_extra_variable == 'RegistrationStart':
             y2008 = student.objects.filter(RegistrationStart='2008').count()
             dependent_values_1.append(y2008)
@@ -398,6 +606,7 @@ def ajax_generate_graph(request):
             dependent_values_1.append(y2018)
 
             '''Number of first year students registered each year'''
+
         elif dependent_extra_variable == 'YearStarted':
             y2008 = student.objects.filter(YearStarted='2008').count()
             dependent_values_1.append(y2008)
@@ -432,6 +641,54 @@ def ajax_generate_graph(request):
             y2018 = student.objects.filter(YearStarted='2018').count()
             dependent_values_1.append(y2018)
 
+        elif dependent_extra_variable == 'Male and Qualified':
+            y2008 = student.objects.filter(RegistrationStart='2008').filter(Qualified='Q').filter(Gender='M').count()
+            dependent_values_1.append(y2008)
+            y2009 = student.objects.filter(RegistrationStart='2009').filter(Qualified='Q').filter(Gender='M').count()
+            dependent_values_1.append(y2009)
+            y2010 = student.objects.filter(RegistrationStart='2010').filter(Qualified='Q').filter(Gender='M').count()
+            dependent_values_1.append(y2010)
+            y2011 = student.objects.filter(RegistrationStart='2011').filter(Qualified='Q').filter(Gender='M').count()
+            dependent_values_1.append(y2011)
+            y2012 = student.objects.filter(RegistrationStart='2012').filter(Qualified='Q').filter(Gender='M').count()
+            dependent_values_1.append(y2012)
+            y2013 = student.objects.filter(RegistrationStart='2013').filter(Qualified='Q').filter(Gender='M').count()
+            dependent_values_1.append(y2013)
+            y2014 = student.objects.filter(RegistrationStart='2014').filter(Qualified='Q').filter(Gender='M').count()
+            dependent_values_1.append(y2014)
+            y2015 = student.objects.filter(RegistrationStart='2015').filter(Qualified='Q').filter(Gender='M').count()
+            dependent_values_1.append(y2015)
+            y2016 = student.objects.filter(RegistrationStart='2016').filter(Qualified='Q').filter(Gender='M').count()
+            dependent_values_1.append(y2016)
+            y2017 = student.objects.filter(RegistrationStart='2017').filter(Qualified='Q').filter(Gender='M').count()
+            dependent_values_1.append(y2017)
+            y2018 = student.objects.filter(RegistrationStart='2018').filter(Qualified='Q').filter(Gender='M').count()
+            dependent_values_1.append(y2018)
+
+        elif dependent_extra_variable == 'Male and Not Qualified':
+            y2008 = student.objects.filter(RegistrationStart='2008').filter(Qualified='F').filter(Gender='M').count()
+            dependent_values_1.append(y2008)
+            y2009 = student.objects.filter(RegistrationStart='2009').filter(Qualified='F').filter(Gender='M').count()
+            dependent_values_1.append(y2009)
+            y2010 = student.objects.filter(RegistrationStart='2010').filter(Qualified='F').filter(Gender='M').count()
+            dependent_values_1.append(y2010)
+            y2011 = student.objects.filter(RegistrationStart='2011').filter(Qualified='F').filter(Gender='M').count()
+            dependent_values_1.append(y2011)
+            y2012 = student.objects.filter(RegistrationStart='2012').filter(Qualified='F').filter(Gender='M').count()
+            dependent_values_1.append(y2012)
+            y2013 = student.objects.filter(RegistrationStart='2013').filter(Qualified='F').filter(Gender='M').count()
+            dependent_values_1.append(y2013)
+            y2014 = student.objects.filter(RegistrationStart='2014').filter(Qualified='F').filter(Gender='M').count()
+            dependent_values_1.append(y2014)
+            y2015 = student.objects.filter(RegistrationStart='2015').filter(Qualified='F').filter(Gender='M').count()
+            dependent_values_1.append(y2015)
+            y2016 = student.objects.filter(RegistrationStart='2016').filter(Qualified='F').filter(Gender='M').count()
+            dependent_values_1.append(y2016)
+            y2017 = student.objects.filter(RegistrationStart='2017').filter(Qualified='F').filter(Gender='M').count()
+            dependent_values_1.append(y2017)
+            y2018 = student.objects.filter(RegistrationStart='2018').filter(Qualified='F').filter(Gender='M').count()
+            dependent_values_1.append(y2018)
+
         '''Determination of graph labels '''
 
         label0 = 'label'
@@ -442,14 +699,26 @@ def ajax_generate_graph(request):
             label0 = 'Number of Deregistered Students'
         elif dependent_variable == 'YearStarted':
             label0 = 'Number of First Year Students - UG OR PG'
-        elif dependent_variable == 'Male and RegistrationStart':
-            label0 = 'Number of Male Registered Students'
         elif dependent_variable == 'Female and RegistrationStart':
             label0 = 'Number of Female Registered Students'
-        elif dependent_variable == 'Male and RegistrationEnd':
-            label0 = 'Number of Male Deregistered Students'
         elif dependent_variable == 'Female and RegistrationEnd':
             label0 = 'Number of Female Deregistered Students'
+        elif dependent_variable == 'Biological Science Degree':
+            label0 = 'Number in Biological Science Degree'
+        elif dependent_variable == 'Mathematics Degree':
+            label0 = 'Number in Mathematics Degree'
+        elif dependent_variable == 'Physical Science Degree':
+            label0 = 'Physical Science Degree'
+        elif dependent_variable == 'Earth Science Degree':
+            label0 = 'Earth Science Degree'
+        elif dependent_variable == 'Unknown Streamline':
+            label0 = 'Unknown Streamline'
+        elif dependent_variable == 'Female and Qualified':
+            label0 = 'Female and Qualified'
+        elif dependent_variable == 'Female and Not Qualified':
+            label0 = 'Female and Not Qualified'
+        elif dependent_variable == 'No Student Record':
+            label0 = 'No Student Record'
 
         if dependent_extra_variable == 'RegistrationStart':
             label1 = 'Number of Registered Students'
@@ -459,12 +728,12 @@ def ajax_generate_graph(request):
             label1 = 'Number of First Year Students - UG OR PG'
         elif dependent_extra_variable == 'Male and RegistrationStart':
             label1 = 'Number of Male Registered Students'
-        elif dependent_extra_variable == 'Female and RegistrationStart':
-            label1 = 'Number of Female Registered Students'
         elif dependent_extra_variable == 'Male and RegistrationEnd':
             label1 = 'Number of Male deregistered Students'
-        elif dependent_extra_variable == 'Female and RegistrationEnd':
-            label1 = 'Number of Female deregistered Students'
+        elif dependent_extra_variable == 'Male and Qualified':
+            label1 = 'Male and Qualified'
+        elif dependent_extra_variable == 'Male and Not Qualified':
+            label1 = 'Male and Not Qualified'
 
         graphinfo = {
             "independent_values": independent_values,

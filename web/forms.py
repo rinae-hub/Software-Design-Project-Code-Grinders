@@ -14,22 +14,26 @@ dependent = [
     ('RegistrationStart', 'Registered Students'),
     ('RegistrationEnd', 'Deregistered Students'),
     ('YearStarted', 'First Year Students - UG OR PG'),
-    ('Male and RegistrationStart', 'Male Registered Students'),
     ('Female and RegistrationStart', 'Female Registered Students'),
-    ('Male and RegistrationEnd', 'Male Deregistered Students'),
     ('Female and RegistrationEnd', 'Female Deregistered Students'),
+    ('Biological Science Degree', 'Biological Science Degree'),
+    ('Mathematics Degree', 'Mathematics Degree'),
+    ('Physical Science Degree', 'Physical Science Degree'),
+    ('Earth Science Degree', 'Earth Science Degree'),
+    ('Unknown Streamline', 'Unknown Streamline'),
+    ('Female and Qualified', 'Female and Qualified'),
+    ('Female and Not Qualified', 'Female and Not Qualified'),
+    ('No Student Record', 'No Student Record'),
+
 ]
 dependent_extras = [
     ('Black', ''),
-    ('RegistrationStart', 'Registered Students'),
-    ('RegistrationEnd', 'Deregistered Students'),
-    ('YearStarted', 'First Year Students - UG OR PG'),
     ('Male and RegistrationStart', 'Male Registered Students'),
-    ('Female and RegistrationStart', 'Female Registered Students'),
     ('Male and RegistrationEnd', 'Male Deregistered Students'),
-    ('Female and RegistrationEnd', 'Female Deregistered Students'),
-]
+    ('Male and Qualified', 'Male and Qualified'),
+    ('Male and Not Qualified', 'Male and Not Qualified'),
 
+]
 colour = [('#00FF00', 'Green'),
           ('#0000FF', 'Blue'),
           ('#800000', 'Maroon'),
@@ -37,7 +41,6 @@ colour = [('#00FF00', 'Green'),
           ('#808000', 'Olive'),
           ('#00FF00', 'Lime'),
           ]
-
 
 class GenerateGraphForm(forms.Form):
     independent_variable = forms.CharField(required=True, widget=forms.Select(choices=independent))

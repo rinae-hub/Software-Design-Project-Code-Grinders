@@ -1,93 +1,97 @@
 {% extends 'base.html' %}
 {%load crispy_forms_tags%}
-<head>
 
- </head>
-    <h1>Home</h1>
-<body>
-
-    {% block content%}
+{% block content%}
 <div>
-
-    <form  id='InputsForm' style="width:500px">
-        <table>
-            {% csrf_token %}
-            {{ form }}
-        </table>
-        <input id='SubmitButton' type="submit" value="Generate Graph">
-    </form>
+<div style="background:linear-gradient(-45deg,#EE7752,#E73C7E,#23A6D5,#23D5AB);">
+   <form  id='InputsForm' style="color:black;
+             height:400px;
+             padding-left:50px;
+             width:500px;
+             ">
+      <table>
+         {% csrf_token %}
+         {{ form|crispy }}
+      </table>
+      <input id='SubmitButton' type="submit" value="Generate Graph">
+   </form>
 </div>
-
-<div id="myDiv">
-
-</div>
-
-</body>
+<div style="
+                               border: 2px solid transparent;
+                               border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+                               border-image-slice: 1;
+                               height:756px;
+                               width:200;
+                               padding:100px;
+                              ">
+        <div id="myDiv">
+        </div>
+   </div>
 
 <script type="text/javascript">
-  var trace1,trace2;
-  var data
-  $('#SubmitButton').click(function (event) {
-  event.preventDefault(); //so that we stop normal form submit.
-  console.log($('form#InputsForm').serializeArray());
-      $.ajax({
+
+var trace1,trace2;
+var data
+$('#SubmitButton').click(function (event) {
+   event.preventDefault(); //so that we stop normal form submit.
+   console.log($('form#InputsForm').serializeArray());
+   $.ajax({
         type: 'POST',
         url: "{% url 'ajax'%}",
         dataType: 'json',
         data: $('form#InputsForm').serializeArray(),
         success: function (data) {
-          console.log(data['dependent_extra_values']);
-          trace1 = {
-                       name: data['name_1'],
-                       x: data['independent_values'],
-                       y: data['dependent_values'],
-                       type:data['graph_type'],
-                       line: {
-                         color: data['colours']
-                       }
-                     };
+            console.log(data['dependent_extra_values']);
+            trace1 = {
+                name: data['name_1'],
+                x: data['independent_values'],
+                y: data['dependent_values'],
+                type:data['graph_type'],
+                line: {
+                    color: data['colours']
+                }
+            };
             trace2 = {
-              name: data['name_2'],
-             x: data['independent_values'],
-             y: data['dependent_extra_values'],
-             type:data['graph_type'],
-             line: {
-               color: '#00FFFF'
-             }
-           };
+                name: data['name_2'],
+                x: data['independent_values'],
+                y: data['dependent_extra_values'],
+                type:data['graph_type'],
+                line: {
+                    color: '#00FFFF'
+                }
+            };
 
-                  var data = [trace1,trace2];
-
-                    layout = {
-                       showlegend: true,
-                       xaxis: {
-                         title:{
-                           text : 'Years'
-
-                         },
-                         autotick: false,
-                         dtick: 1,
-                         ticklen:0.5,
-                         tickwidth: 4,
-                         tickcolor: "#000"
-                       },
-                      yaxis:{
-                         title:{
-                           text: 'Number of Students'
-                         }
-                       }
-
-                    };
-
-
-                     Plotly.newPlot('myDiv', data, layout, {
-                       responsive: true,
-                       displaylogo: false
-                     });
+            var data = [trace1,trace2];
+            var layout1 = {barmode: 'group'};
+            layout = {
+                showlegend: true,
+                xaxis: {
+                    title:{
+                    text : 'Years'
+                    },
+                    font:{
+                      family: 'Raleway, sans-serif'
+                    },
+                    autotick: false,
+                    dtick: 1,
+                    ticklen:0.5,
+                    tickwidth: 4,
+                    tickcolor: "#000",
+                    tickangle: -45
+                },
+                yaxis:{
+                    title:{
+                        text: 'Number of Students'
+                    }
+                }
+            };
+            Plotly.newPlot('myDiv', data, layout, {
+                responsive: true,
+                displaylogo: false
+            });
         }
-      });
-
-    });
-
- </script>
- {% endblock content %}
+   });
+});
+</script>
+</div>
+{% endblock content %}
