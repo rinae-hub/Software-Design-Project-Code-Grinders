@@ -30,7 +30,7 @@ class TestUrls(SimpleTestCase):
         
     def test_graph_url_is_resolved(self):
         url = reverse('graph')
-        self.assertEquals(resolve(url).func,ajax_generate_graph)
+        self.assertEquals(resolve(url).func,graph)
 
 
     #testing whether the url to logout-view is working
