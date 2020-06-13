@@ -33,10 +33,6 @@ class TestViews(TestCase):
         )
         self.assertEquals(response.status_code,200)
 
-    '''Testing value returned by database are valid'''
-    #Filtered by RegistrationStart and Biological Science Degree#
-    def test_values_returned_by_database_Biological_Science_Degree_in_ajax(self):
-
         y2008 =student.objects.filter(RegistrationStart='2008').filter(Streamline='Biological Science Degree').count()
         y2009 =student.objects.filter(RegistrationStart='2009').filter(Streamline='Biological Science Degree').count()
         y2010 =student.objects.filter(RegistrationStart='2010').filter(Streamline='Biological Science Degree').count()
@@ -61,8 +57,6 @@ class TestViews(TestCase):
         self.assertEquals(y2017,0)
         self.assertEquals(y2018,3)
 
-    #Filtered by RegistrationEnd and Female#
-    def test_values_returned_by_database_deregistered_females_in_ajax(self):
         y2008 = student.objects.filter(RegistrationEnd='2008').filter(Gender='F').count()
         y2009 = student.objects.filter(RegistrationEnd='2009').filter(Gender='F').count()
         y2010 = student.objects.filter(RegistrationEnd='2010').filter(Gender='F').count()
@@ -86,6 +80,10 @@ class TestViews(TestCase):
         self.assertEquals(y2016,0)
         self.assertEquals(y2017,0)
         self.assertEquals(y2018,2)
+
+    '''Testing value returned by database are valid'''
+
+
 
 
 
