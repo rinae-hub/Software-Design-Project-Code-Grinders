@@ -43,11 +43,11 @@ colour = [('#00FF00', 'Green'),
           ]
 
 class GenerateGraphForm(forms.Form):
-    independent_variable = forms.CharField(required=True, widget=forms.Select(choices=independent))
-    dependent_variable = forms.CharField(required=True, widget=forms.Select(choices=dependent))
-    dependent_variable_extra = forms.CharField(widget=forms.Select(choices=dependent_extras))
-    colours = forms.CharField(widget=forms.Select(choices=colour))
-    graph_type = forms.CharField(max_length=3, widget=forms.Select(choices=graphs))
+    independent_variable = forms.CharField(required=True,widget=forms.Select(choices=independent))
+    dependent_variable = forms.CharField(required=True,widget=forms.Select(choices=dependent))
+    dependent_variable_extra =forms.CharField(widget=forms.Select(choices=dependent_extras))
+    colours =forms.CharField(widget=forms.Select(choices=colour))
+    graph_type = forms.CharField(widget=forms.Select(choices=graphs))
 
 
 class UserRegisterForm(UserCreationForm):
