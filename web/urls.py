@@ -6,7 +6,7 @@ from .import views
 
 urlpatterns = [
     #remove 
-    path('abc/', views.abc, name='abc'),
+    #path('abc/', views.abc, name='abc'),
     path('graph/', views.graph, name='graph'),
     path('',views.home_view, name='home'),
     path('home/', views.redirect_view),
