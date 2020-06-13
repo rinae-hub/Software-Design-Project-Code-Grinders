@@ -3,19 +3,7 @@
 
 {% block content%}
 <div>
-<div style="background:linear-gradient(-45deg,#EE7752,#E73C7E,#23A6D5,#23D5AB);">
-   <form  id='InputsForm' style="color:black;
-             height:400px;
-             padding-left:50px;
-             width:500px;
-             ">
-      <table>
-         {% csrf_token %}
-         {{ form|crispy }}
-      </table>
-      <button id="SubmitButton"type="submit" class="btn btn-success">Generate</button>
-   </form>
-</div>
+
 <div style="
                                border: 2px solid transparent;
                                border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
@@ -27,6 +15,20 @@
         <div id="myDiv">
         </div>
    </div>
+
+<div style="background:linear-gradient(-45deg,#EE7752,#E73C7E,#23A6D5,#23D5AB);">
+      <form  id='InputsForm' style="color:black;
+                height:400px;
+                padding-left:50px;
+                width:500px;
+                ">
+         <table>
+            {% csrf_token %}
+            {{ form|crispy }}
+         </table>
+         <button id="SubmitButton"type="submit" class="btn btn-success">Generate</button>
+      </form>
+  </div>
 
 <script type="text/javascript">
 
