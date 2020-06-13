@@ -6,12 +6,11 @@ from web.models import student
 
 
 def ajax_generate_graph(request):
-    if request.method == 'POST':
-        graph_type = request.POST['graph_type']
-        independent_variable = request.POST['independent_variable']
-        dependent_variable = request.POST['dependent_variable']
-        dependent_extra_variable = request.POST['dependent_variable_extra']
-        colour_value = request.POST['colours']
+    if request.is_ajax():
+        graph_type = request.POST.get('graph_type',False)
+        dependent_variable =request.POST.get('dependent_variable', False)
+        dependent_extra_variable =request.POST.get('dependent_variable_extra',False)
+        colour_value = request.POST.get('colours',  False)
 
         independent_values = ['2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018']
         dependent_values = []
