@@ -25,13 +25,7 @@ class TestViews(TestCase):
         label1 ='label1'
         label2 ='label2'
         client= Client()
-        response = self.client.post(
-        reverse('ajax'),
-        data={'dependent_extra_values':dependent_values_1,'dependent_values':dependent_values,'colours':color,'name_1':label1,'name_2':label2,'graph_type':bar},
-        content_type='application/json',
-        HTTP_X_REQUESTED_WITH='XMLHttpRequest'
-        )
-        self.assertEquals(response.status_code,200)
+
 
         y2008 =student.objects.filter(RegistrationStart='2008').filter(Streamline='Biological Science Degree').count()
         y2009 =student.objects.filter(RegistrationStart='2009').filter(Streamline='Biological Science Degree').count()
@@ -81,6 +75,14 @@ class TestViews(TestCase):
         self.assertEquals(y2017,0)
         self.assertEquals(y2018,2)
 
+        response = self.client.post(
+        reverse('ajax'),
+        data={'dependent_extra_values':dependent_values_1,'dependent_values':dependent_values,'colours':color,'name_1':label1,'name_2':label2,'graph_type':bar},
+        content_type='application/json',
+        HTTP_X_REQUESTED_WITH='XMLHttpRequest'
+        )
+        self.assertEquals(response.status_code,200)
+
     '''Testing value returned by database are valid'''
 
 
@@ -126,3 +128,4 @@ class TestViews(TestCase):
         form=UserRegisterForm()
         response=client.post(reverse('register'),data={'username':"TAS",'email':"readEveryday@indo.co.za",'password1':"postcorona",'password2':"postcorona"})
         self.assertRedirects(response,reverse('login'),status_code=302,target_status_code=200,fetch_redirect_response=False)
+
