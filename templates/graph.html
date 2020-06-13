@@ -44,7 +44,7 @@ $('#SubmitButton').click(function (event) {
             console.log(data['dependent_extra_values']);
             trace1 = {
                 name: data['name_1'],
-                x: data['independent_values'],
+                x: ['2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018'],
                 y: data['dependent_values'],
                 type:data['graph_type'],
                 line: {
@@ -53,7 +53,7 @@ $('#SubmitButton').click(function (event) {
             };
             trace2 = {
                 name: data['name_2'],
-                x: data['independent_values'],
+                x: ['2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018'],
                 y: data['dependent_extra_values'],
                 type:data['graph_type'],
                 line: {
@@ -95,3 +95,4 @@ $('#SubmitButton').click(function (event) {
 </script>
 </div>
 {% endblock content %}
+
