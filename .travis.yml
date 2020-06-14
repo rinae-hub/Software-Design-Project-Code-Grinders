@@ -16,7 +16,7 @@ install:
 
 
 script:
-- coverage run --source=./ manage.py test CodeGrinders
+- coverage run pytest --cov-config=.coveragerc --cov=CodeGrinders CodeGrinders/tests/
 
 
 after_success:
