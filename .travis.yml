@@ -14,9 +14,7 @@ install:
 
 
 script:
--coverage erase
 -coverage run --source=./ manage.py test CodeGrinders
--coverage report -m
 
 
 after_success:
