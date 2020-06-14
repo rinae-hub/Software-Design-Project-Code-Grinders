@@ -13,6 +13,7 @@ install:
 - pip install django-crispy-forms
 - pip install coveralls
 - pip install pytest-cov
+- pip install pytest-django
 
 
 script:
