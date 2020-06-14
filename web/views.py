@@ -777,6 +777,6 @@ def register_view(request):
     return render(request, 'register.html', {'form': form})
 
 
-#def redirect_view(request):
-#    response = redirect('home/')
-#    return response
+def redirect_view(request):
+    response = redirect('home/')
+    return response
