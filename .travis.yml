@@ -1,10 +1,9 @@
 language: python
 
 python:
-# python versions
-- "3.8"
-- "3.7"
-- "3.6"
+-  "3.8"
+-  "3.7"
+env:
 
 # install dependencies
 install:
@@ -13,11 +12,9 @@ install:
 - pip install coveralls
 
 
+# run test scripts
 script:
--coverage run --source=./ manage.py test CodeGrinders
-
-
+- coverage run --source=./ manage.py CodeGrinders
+  
 after_success:
   coveralls
-
-
