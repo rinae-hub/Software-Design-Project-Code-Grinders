@@ -296,6 +296,59 @@ class TestViews(TestCase):
         self.assertEquals(y2018,1)
 
 
+    #Filtered by Streamline= Earth Science Degree#
+    def test_earth_science_in_ajax(self):
+        y2008 = student.objects.filter(RegistrationStart='2008').filter(Streamline='Earth Science Degree').count()
+        y2009 = student.objects.filter(RegistrationStart='2009').filter(Streamline='Earth Science Degree').count()
+        y2010 = student.objects.filter(RegistrationStart='2010').filter(Streamline='Earth Science Degree').count()
+        y2011 = student.objects.filter(RegistrationStart='2011').filter(Streamline='Earth Science Degree').count()
+        y2012 = student.objects.filter(RegistrationStart='2012').filter(Streamline='Earth Science Degree').count()
+        y2013 = student.objects.filter(RegistrationStart='2013').filter(Streamline='Earth Science Degree').count()
+        y2014 = student.objects.filter(RegistrationStart='2014').filter(Streamline='Earth Science Degree').count()
+        y2015 = student.objects.filter(RegistrationStart='2015').filter(Streamline='Earth Science Degree').count()
+        y2016 = student.objects.filter(RegistrationStart='2016').filter(Streamline='Earth Science Degree').count()
+        y2017 = student.objects.filter(RegistrationStart='2017').filter(Streamline='Earth Science Degree').count()
+        y2018 = student.objects.filter(RegistrationStart='2018').filter(Streamline='Earth Science Degree').count()
+
+        self.assertEquals(y2008,0)
+        self.assertEquals(y2009,0)
+        self.assertEquals(y2010,0)
+        self.assertEquals(y2011,0)
+        self.assertEquals(y2012,0)
+        self.assertEquals(y2013,0)
+        self.assertEquals(y2014,0)
+        self.assertEquals(y2015,0)
+        self.assertEquals(y2016,0)
+        self.assertEquals(y2017,0)
+        self.assertEquals(y2018,0)
+
+    #Filtered by Unknown Streamline#
+    def test_unknownstreamline_in_ajax(self):
+        y2008 = student.objects.filter(RegistrationStart='2008').filter(Streamline='Unknown Streamline').count()
+        y2009 = student.objects.filter(RegistrationStart='2009').filter(Streamline='Unknown Streamline').count()
+        y2010 = student.objects.filter(RegistrationStart='2010').filter(Streamline='Unknown Streamline').count()
+        y2011 = student.objects.filter(RegistrationStart='2011').filter(Streamline='Unknown Streamline').count()
+        y2012 = student.objects.filter(RegistrationStart='2012').filter(Streamline='Unknown Streamline').count()
+        y2013 = student.objects.filter(RegistrationStart='2013').filter(Streamline='Unknown Streamline').count()
+        y2014 = student.objects.filter(RegistrationStart='2014').filter(Streamline='Unknown Streamline').count()
+        y2015 = student.objects.filter(RegistrationStart='2015').filter(Streamline='Unknown Streamline').count()
+        y2016 = student.objects.filter(RegistrationStart='2016').filter(Streamline='Unknown Streamline').count()
+        y2017 = student.objects.filter(RegistrationStart='2017').filter(Streamline='Unknown Streamline').count()
+        y2018 = student.objects.filter(RegistrationStart='2018').filter(Streamline='Unknown Streamline').count()
+
+        self.assertEquals(y2008,0)
+        self.assertEquals(y2009,0)
+        self.assertEquals(y2010,0)
+        self.assertEquals(y2011,0)
+        self.assertEquals(y2012,0)
+        self.assertEquals(y2013,0)
+        self.assertEquals(y2014,0)
+        self.assertEquals(y2015,0)
+        self.assertEquals(y2016,0)
+        self.assertEquals(y2017,0)
+        self.assertEquals(y2018,0)
+
+
 
 
     def test_graph_view_GET(self):
