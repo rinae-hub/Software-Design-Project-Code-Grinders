@@ -14,12 +14,11 @@ install:
 
 
 script:
-- coverage run --source=./ manage.py test CodeGrinders
+-coverage erase
+-coverage run --source=./ manage.py test CodeGrinders
+-coverage report
 
 after_success:
- coveralls:report
- fail_under = 100
- show_missing = True
- skip_covered = True
+ coveralls
 
 
