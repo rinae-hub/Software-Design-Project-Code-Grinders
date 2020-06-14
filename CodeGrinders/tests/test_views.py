@@ -9,12 +9,20 @@ class TestViews(TestCase):
     # creating a dummy data
     def setUp(self):
         self.student1=student.objects.create(StudentNumber = '70141',Gender='F',YearStarted='2016',RegistrationStart='2008', RegistrationEnd='2018',Streamline='Biological Science Degree')
-        self.student2=student.objects.create(StudentNumber = '70151',Gender='F',YearStarted='2009',RegistrationStart='2013',RegistrationEnd='2012',Streamline='Biological Science Degree')
-        self.student3=student.objects.create(StudentNumber = '714141',Gender='M',YearStarted='2011',RegistrationStart='2015',RegistrationEnd='2011',Streamline='Biological Science Degree')
-        self.student4=student.objects.create(StudentNumber = '79841',Gender='M',YearStarted='2017',RegistrationStart='2016',RegistrationEnd='2016',Streamline='Biological Science Degree')
-        self.student4=student.objects.create(StudentNumber = '728441',Gender='M',YearStarted='2016',RegistrationStart='2018',RegistrationEnd='2008',Streamline='Biological Science Degree')
-        self.student4=student.objects.create(StudentNumber = '788401',Gender='F',YearStarted='2011',RegistrationStart='2018',RegistrationEnd='2015',Streamline='Biological Science Degree')
-        self.student4=student.objects.create(StudentNumber = '788141',Gender='F',YearStarted='2013',RegistrationStart='2018',RegistrationEnd='2018',Streamline='Biological Science Degree')
+        self.student2=student.objects.create(StudentNumber = '70151',Gender='F',YearStarted='2009',RegistrationStart='2013',RegistrationEnd='2012',Streamline='Mathematics Degree')
+        self.student3=student.objects.create(StudentNumber = '714141',Gender='M',YearStarted='2011',RegistrationStart='2015',RegistrationEnd='2011',Streamline='Physical Science Degree')
+        self.student5=student.objects.create(StudentNumber = '79841',Gender='M',YearStarted='2017',RegistrationStart='2016',RegistrationEnd='2016',Streamline='Mathematics Degree')
+        self.student6=student.objects.create(StudentNumber = '728441',Gender='M',YearStarted='2016',RegistrationStart='2018',RegistrationEnd='2008',Streamline='Biological Science Degree')
+        self.student7=student.objects.create(StudentNumber = '788401',Gender='F',YearStarted='2011',RegistrationStart='2018',RegistrationEnd='2015',Streamline='Mathematics Degree')
+        self.student8=student.objects.create(StudentNumber = '788141',Gender='F',YearStarted='2013',RegistrationStart='2018',RegistrationEnd='2018',Streamline='Biological Science Degree')
+        self.student9=student.objects.create(StudentNumber = '6521',Gender='F',YearStarted='2016',RegistrationStart='2008', RegistrationEnd='2018',Streamline='Mathematics Degree')
+        self.student10=student.objects.create(StudentNumber = '54112',Gender='F',YearStarted='2009',RegistrationStart='2013',RegistrationEnd='2012',Streamline='Physical Science Degree')
+        self.student11=student.objects.create(StudentNumber = '4514',Gender='F',YearStarted='2011',RegistrationStart='2015',RegistrationEnd='2011',Streamline='Biological Science Degree')
+        self.student12=student.objects.create(StudentNumber = '4471',Gender='M',YearStarted='2017',RegistrationStart='2016',RegistrationEnd='2016',Streamline='Mathematics Degree')
+        self.student13=student.objects.create(StudentNumber = '1127',Gender='M',YearStarted='2016',RegistrationStart='2018',RegistrationEnd='2008',Streamline='Physical Science Degree')
+        self.student14=student.objects.create(StudentNumber = '00141',Gender='M',YearStarted='2011',RegistrationStart='2018',RegistrationEnd='2015',Streamline='Biological Science Degree')
+        self.student15=student.objects.create(StudentNumber = '895450',Gender='F',YearStarted='2013',RegistrationStart='2018',RegistrationEnd='2018',Streamline='Biological Science Degree')
+
 
     # checking whether the ajax_generate_graph is returning data correctly as it should
     def test_ajax_view_POST(self):
@@ -44,12 +52,12 @@ class TestViews(TestCase):
         self.assertEquals(y2010,0)
         self.assertEquals(y2011,0)
         self.assertEquals(y2012,0)
-        self.assertEquals(y2013,1)
+        self.assertEquals(y2013,0)
         self.assertEquals(y2014,0)
         self.assertEquals(y2015,1)
-        self.assertEquals(y2016,1)
+        self.assertEquals(y2016,0)
         self.assertEquals(y2017,0)
-        self.assertEquals(y2018,3)
+        self.assertEquals(y2018,4)
 
     #Filtered by RegistrationEnd and Female#
     def test_deregistered_females_in_ajax(self):
@@ -68,14 +76,14 @@ class TestViews(TestCase):
         self.assertEquals(y2008,0)
         self.assertEquals(y2009,0)
         self.assertEquals(y2010,0)
-        self.assertEquals(y2011,0)
-        self.assertEquals(y2012,1)
+        self.assertEquals(y2011,1)
+        self.assertEquals(y2012,2)
         self.assertEquals(y2013,0)
         self.assertEquals(y2014,0)
         self.assertEquals(y2015,1)
         self.assertEquals(y2016,0)
         self.assertEquals(y2017,0)
-        self.assertEquals(y2018,2)
+        self.assertEquals(y2018,4)
 
 
     #Filtered by RegistrationEnd and males#
@@ -92,15 +100,15 @@ class TestViews(TestCase):
         y2017 = student.objects.filter(RegistrationEnd='2017').filter(Gender='M').count()
         y2018 = student.objects.filter(RegistrationEnd='2018').filter(Gender='M').count()
 
-        self.assertEquals(y2008,1)
+        self.assertEquals(y2008,2)
         self.assertEquals(y2009,0)
         self.assertEquals(y2010,0)
         self.assertEquals(y2011,1)
         self.assertEquals(y2012,0)
         self.assertEquals(y2013,0)
         self.assertEquals(y2014,0)
-        self.assertEquals(y2015,0)
-        self.assertEquals(y2016,1)
+        self.assertEquals(y2015,1)
+        self.assertEquals(y2016,2)
         self.assertEquals(y2017,0)
         self.assertEquals(y2018,0)
 
@@ -118,17 +126,17 @@ class TestViews(TestCase):
         y2017 = student.objects.filter(RegistrationStart='2017').filter(Gender='F').count()
         y2018 = student.objects.filter(RegistrationStart='2018').filter(Gender='F').count()
 
-        self.assertEquals(y2008,1)
+        self.assertEquals(y2008,2)
         self.assertEquals(y2009,0)
         self.assertEquals(y2010,0)
         self.assertEquals(y2011,0)
         self.assertEquals(y2012,0)
-        self.assertEquals(y2013,1)
+        self.assertEquals(y2013,2)
         self.assertEquals(y2014,0)
-        self.assertEquals(y2015,0)
+        self.assertEquals(y2015,1)
         self.assertEquals(y2016,0)
         self.assertEquals(y2017,0)
-        self.assertEquals(y2018,2)
+        self.assertEquals(y2018,3)
 
     #Filtered by RegistrationStart and males#
     def test_registered_males_in_ajax(self):
@@ -153,9 +161,9 @@ class TestViews(TestCase):
         self.assertEquals(y2013,0)
         self.assertEquals(y2014,0)
         self.assertEquals(y2015,1)
-        self.assertEquals(y2016,1)
+        self.assertEquals(y2016,2)
         self.assertEquals(y2017,0)
-        self.assertEquals(y2018,1)
+        self.assertEquals(y2018,3)
 
     #Filtered by RegistrationStart#
     def test_registered_in_ajax(self):
@@ -171,17 +179,17 @@ class TestViews(TestCase):
         y2017 = student.objects.filter(RegistrationStart='2017').count()
         y2018 = student.objects.filter(RegistrationStart='2018').count()
 
-        self.assertEquals(y2008,1)
+        self.assertEquals(y2008,2)
         self.assertEquals(y2009,0)
         self.assertEquals(y2010,0)
         self.assertEquals(y2011,0)
         self.assertEquals(y2012,0)
-        self.assertEquals(y2013,1)
+        self.assertEquals(y2013,2)
         self.assertEquals(y2014,0)
-        self.assertEquals(y2015,1)
-        self.assertEquals(y2016,1)
+        self.assertEquals(y2015,2)
+        self.assertEquals(y2016,2)
         self.assertEquals(y2017,0)
-        self.assertEquals(y2018,3)
+        self.assertEquals(y2018,6)
 
         #Filtered by RegistrationEnd#
     def test_deregistered_in_ajax(self):
@@ -197,17 +205,17 @@ class TestViews(TestCase):
         y2017 = student.objects.filter(RegistrationEnd='2017').count()
         y2018 = student.objects.filter(RegistrationEnd='2018').count()
 
-        self.assertEquals(y2008,1)
+        self.assertEquals(y2008,2)
         self.assertEquals(y2009,0)
         self.assertEquals(y2010,0)
-        self.assertEquals(y2011,1)
-        self.assertEquals(y2012,1)
+        self.assertEquals(y2011,2)
+        self.assertEquals(y2012,2)
         self.assertEquals(y2013,0)
         self.assertEquals(y2014,0)
-        self.assertEquals(y2015,1)
-        self.assertEquals(y2016,1)
+        self.assertEquals(y2015,2)
+        self.assertEquals(y2016,2)
         self.assertEquals(y2017,0)
-        self.assertEquals(y2018,2)
+        self.assertEquals(y2018,4)
 
         #Filtered by yearstarted#
     def test_yearstarted_in_ajax(self):
@@ -224,16 +232,71 @@ class TestViews(TestCase):
         y2018 = student.objects.filter(YearStarted='2018').count()
 
         self.assertEquals(y2008,0)
-        self.assertEquals(y2009,1)
+        self.assertEquals(y2009,2)
         self.assertEquals(y2010,0)
-        self.assertEquals(y2011,2)
+        self.assertEquals(y2011,4)
+        self.assertEquals(y2012,0)
+        self.assertEquals(y2013,2)
+        self.assertEquals(y2014,0)
+        self.assertEquals(y2015,0)
+        self.assertEquals(y2016,4)
+        self.assertEquals(y2017,2)
+        self.assertEquals(y2018,0)
+
+    #Filtered by Streamline= Mathematics Degree#
+    def test_mathematics_in_ajax(self):
+        y2008 = student.objects.filter(RegistrationStart='2008').filter(Streamline='Mathematics Degree').count()
+        y2009 = student.objects.filter(RegistrationStart='2009').filter(Streamline='Mathematics Degree').count()
+        y2010 = student.objects.filter(RegistrationStart='2010').filter(Streamline='Mathematics Degree').count()
+        y2011 = student.objects.filter(RegistrationStart='2011').filter(Streamline='Mathematics Degree').count()
+        y2012 = student.objects.filter(RegistrationStart='2012').filter(Streamline='Mathematics Degree').count()
+        y2013 = student.objects.filter(RegistrationStart='2013').filter(Streamline='Mathematics Degree').count()
+        y2014 = student.objects.filter(RegistrationStart='2014').filter(Streamline='Mathematics Degree').count()
+        y2015 = student.objects.filter(RegistrationStart='2015').filter(Streamline='Mathematics Degree').count()
+        y2016 = student.objects.filter(RegistrationStart='2016').filter(Streamline='Mathematics Degree').count()
+        y2017 = student.objects.filter(RegistrationStart='2017').filter(Streamline='Mathematics Degree').count()
+        y2018 = student.objects.filter(RegistrationStart='2018').filter(Streamline='Mathematics Degree').count()
+
+        self.assertEquals(y2008,1)
+        self.assertEquals(y2009,0)
+        self.assertEquals(y2010,0)
+        self.assertEquals(y2011,0)
         self.assertEquals(y2012,0)
         self.assertEquals(y2013,1)
         self.assertEquals(y2014,0)
         self.assertEquals(y2015,0)
         self.assertEquals(y2016,2)
-        self.assertEquals(y2017,1)
-        self.assertEquals(y2018,0)
+        self.assertEquals(y2017,0)
+        self.assertEquals(y2018,1)
+
+        #Filtered by Streamline= Physical Science Degree#
+    def test_physical_science_in_ajax(self):
+        y2008 = student.objects.filter(RegistrationStart='2008').filter(Streamline='Physical Science Degree').count()
+        y2009 = student.objects.filter(RegistrationStart='2009').filter(Streamline='Physical Science Degree').count()
+        y2010 = student.objects.filter(RegistrationStart='2010').filter(Streamline='Physical Science Degree').count()
+        y2011 = student.objects.filter(RegistrationStart='2011').filter(Streamline='Physical Science Degree').count()
+        y2012 = student.objects.filter(RegistrationStart='2012').filter(Streamline='Physical Science Degree').count()
+        y2013 = student.objects.filter(RegistrationStart='2013').filter(Streamline='Physical Science Degree').count()
+        y2014 = student.objects.filter(RegistrationStart='2014').filter(Streamline='Physical Science Degree').count()
+        y2015 = student.objects.filter(RegistrationStart='2015').filter(Streamline='Physical Science Degree').count()
+        y2016 = student.objects.filter(RegistrationStart='2016').filter(Streamline='Physical Science Degree').count()
+        y2017 = student.objects.filter(RegistrationStart='2017').filter(Streamline='Physical Science Degree').count()
+        y2018 = student.objects.filter(RegistrationStart='2018').filter(Streamline='Physical Science Degree').count()
+
+        self.assertEquals(y2008,0)
+        self.assertEquals(y2009,0)
+        self.assertEquals(y2010,0)
+        self.assertEquals(y2011,0)
+        self.assertEquals(y2012,0)
+        self.assertEquals(y2013,1)
+        self.assertEquals(y2014,0)
+        self.assertEquals(y2015,1)
+        self.assertEquals(y2016,0)
+        self.assertEquals(y2017,0)
+        self.assertEquals(y2018,1)
+
+
+
 
     def test_graph_view_GET(self):
         client = Client()
