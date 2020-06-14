@@ -9,34 +9,29 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <!--Plotly js-->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    
     {%block links%} {%endblock%}
 </head>
 
 <body>
-
     <header>
-
         <div class="wrapper">
             <div class="logo">
                 <h1><span>aná</span>lysi</h1>
             </div>
             {% block nav%} {%endblock%}
         </div>
-
     </header>
+    <div class="content">{%block content%} {%endblock%}</div>
 
-    {%block content%} {%endblock%}
     <div class="footer">
         <div class="footer-content">
             <div class="footer-section about">
@@ -83,7 +78,6 @@
             &copy;CodeGrinder.com | Designed by Code Grinders
         </div>
     </div>
-
 </body>
 
 </html>

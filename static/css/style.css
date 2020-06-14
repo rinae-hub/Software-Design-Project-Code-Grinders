@@ -2,18 +2,18 @@
 html,
 body{
   margin: 0;
+  width:100%;
   padding-top:0px;
   padding-left:0px;
   padding-right:0px;
   font-family: sans-serif;
-  height:200vh;
+  height:100vh;
+  background: url("this.jpg") no-repeat;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment:fixed;
-
 }
-
 header{
     position:sticky;
     background-color:#303036;
@@ -33,7 +33,6 @@ header{
     font-family:Arial;
 }
 .logo h1 span {color:#05f7ff}
-
 .nav-area{
     float:right;
     list-style:none;
@@ -44,7 +43,6 @@ header{
     display:inline-block;
 }
 .nav-area li a{
-
     border-radius: 0px;
     color:white;
     text-decoration:none;
@@ -60,16 +58,16 @@ header{
     transition: all .5s;
 }
 
-
-
-
+.content{
+   min-height: calc(100vh - 70px);
+}
 
 .footer{
 background:#303036;
 color:#d3d3d3;
 height:350px;
+width:100%;
 position:relative;
-
 }
 .footer .footer-content{
 height:360px;
@@ -159,7 +157,7 @@ left:0px;
 padding-top:10px;
 width:100%;
 }
-@media only screen and (max-width:940px){
+@media only screen and (max-width:50px){
    header .wrapper ul {
      width:79%;
      background:#303036;
@@ -177,5 +175,13 @@ width:100%;
   top:20px;
   display:block;
   }
+  .footer{
+    background:#303036;
+    color:#d3d3d3;
+    height:350px;
+    width:100%;
+    position:relative;
+}
+
 }
 .menu{font-size:40px;color:white;position:relative;left:650px;top:20px;display:none;}

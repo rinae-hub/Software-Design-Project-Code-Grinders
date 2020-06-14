@@ -1,3 +1,33 @@
-.form{
+body{
+  background:white;
+}
+.leftside,.rightside{
+    height:100vh;
+}
+.leftside{
+border: 1px solid transparent;
+    border-color:white;
+    background: url("gray.jpg") no-repeat;
+    padding:30px;
+}
+.rightside{
 
 }
+.graph{
+    border: 1px solid transparent;
+    border-color:white;
+    height:100vh;
+    width:100%;
+    padding:80px;
+    background: url("gray.jpg") no-repeat;
+}
+
+.form{
+    color:black;
+    height:500px;
+    padding-left:20px;
+    padding-top:50px;
+    width:100%;
+}
+
+

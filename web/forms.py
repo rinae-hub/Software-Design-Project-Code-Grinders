@@ -3,12 +3,11 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
 independent = [('years', 'Years')]
-graphs = [('bar', 'Bar-Graph'),
-          ('pie', 'Pie-Chart'),
-          ('lines', 'Line-Graph'),
-          ('scatter', 'Scatter-Plot'),
-          ('sunburst', 'Sunburst'),
-          ('markers', 'Bubble Chart')
+graphs = [('bar', 'bar'),
+          ('pie', 'pie'),
+          ('line', 'line'),
+          ('polarArea', 'polarArea'),
+          ('radar', 'radar'),
           ]
 dependent = [
     ('RegistrationStart', 'Registered Students'),

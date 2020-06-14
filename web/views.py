@@ -7,10 +7,10 @@ from web.models import student
 
 def ajax_generate_graph(request):
     if request.is_ajax():
-        graph_type = request.POST.get('graph_type',False)
-        dependent_variable =request.POST.get('dependent_variable', False)
-        dependent_extra_variable =request.POST.get('dependent_variable_extra',False)
-        colour_value = request.POST.get('colours',  False)
+        graph_type = request.POST.get('graph_type', False)
+        dependent_variable = request.POST.get('dependent_variable', False)
+        dependent_extra_variable = request.POST.get('dependent_variable_extra', False)
+        colour_value = request.POST.get('colours', False)
 
         independent_values = ['2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018']
         dependent_values = []
@@ -125,27 +125,38 @@ def ajax_generate_graph(request):
             dependent_values.append(y2018)
 
         elif dependent_variable == 'Physical Science Degree':
-            y2008 = student.objects.filter(RegistrationStart='2008').filter(Streamline='Physical Science Degree').count()
+            y2008 = student.objects.filter(RegistrationStart='2008').filter(
+                Streamline='Physical Science Degree').count()
             dependent_values.append(y2008)
-            y2009 = student.objects.filter(RegistrationStart='2009').filter(Streamline='Physical Science Degree').count()
+            y2009 = student.objects.filter(RegistrationStart='2009').filter(
+                Streamline='Physical Science Degree').count()
             dependent_values.append(y2009)
-            y2010 = student.objects.filter(RegistrationStart='2010').filter(Streamline='Physical Science Degree').count()
+            y2010 = student.objects.filter(RegistrationStart='2010').filter(
+                Streamline='Physical Science Degree').count()
             dependent_values.append(y2010)
-            y2011 = student.objects.filter(RegistrationStart='2011').filter(Streamline='Physical Science Degree').count()
+            y2011 = student.objects.filter(RegistrationStart='2011').filter(
+                Streamline='Physical Science Degree').count()
             dependent_values.append(y2011)
-            y2012 = student.objects.filter(RegistrationStart='2012').filter(Streamline='Physical Science Degree').count()
+            y2012 = student.objects.filter(RegistrationStart='2012').filter(
+                Streamline='Physical Science Degree').count()
             dependent_values.append(y2012)
-            y2013 = student.objects.filter(RegistrationStart='2013').filter(Streamline='Physical Science Degree').count()
+            y2013 = student.objects.filter(RegistrationStart='2013').filter(
+                Streamline='Physical Science Degree').count()
             dependent_values.append(y2013)
-            y2014 = student.objects.filter(RegistrationStart='2014').filter(Streamline='Physical Science Degree').count()
+            y2014 = student.objects.filter(RegistrationStart='2014').filter(
+                Streamline='Physical Science Degree').count()
             dependent_values.append(y2014)
-            y2015 = student.objects.filter(RegistrationStart='2015').filter(Streamline='Physical Science Degree').count()
+            y2015 = student.objects.filter(RegistrationStart='2015').filter(
+                Streamline='Physical Science Degree').count()
             dependent_values.append(y2015)
-            y2016 = student.objects.filter(RegistrationStart='2016').filter(Streamline='Physical Science Degree').count()
+            y2016 = student.objects.filter(RegistrationStart='2016').filter(
+                Streamline='Physical Science Degree').count()
             dependent_values.append(y2016)
-            y2017 = student.objects.filter(RegistrationStart='2017').filter(Streamline='Physical Science Degree').count()
+            y2017 = student.objects.filter(RegistrationStart='2017').filter(
+                Streamline='Physical Science Degree').count()
             dependent_values.append(y2017)
-            y2018 = student.objects.filter(RegistrationStart='2018').filter(Streamline='Physical Science Degree').count()
+            y2018 = student.objects.filter(RegistrationStart='2018').filter(
+                Streamline='Physical Science Degree').count()
             dependent_values.append(y2018)
 
         elif dependent_variable == 'Earth Science Degree':
@@ -373,7 +384,7 @@ def ajax_generate_graph(request):
             '''Determination of second dependent variable'''
 
         elif dependent_variable == 'No Student Record':
-            y2008 = student.objects.filter(RegistrationStart='2008').filter(Nostudentrrecord =1).count()
+            y2008 = student.objects.filter(RegistrationStart='2008').filter(Nostudentrrecord=1).count()
             dependent_values.append(y2008)
             y2009 = student.objects.filter(RegistrationStart='2009').filter(Nostudentrrecord=1).count()
             dependent_values.append(y2009)
@@ -751,10 +762,6 @@ def home_view(request, *args, **kwargs):
     return render(request, "home.html", {})  # templates
 
 
-def abc(request, *args, **kwargs):
-    return render(request, "abc.html", {})  # templates
-
-
 def graph(request, *args, **kwargs):
     form = GenerateGraphForm()
     return render(request, "graph.html", {'form': form})  # templates
@@ -774,5 +781,5 @@ def register_view(request):
 
 
 def redirect_view(request):
-    response = redirect('home/')
+    response = redirect('')
     return response
