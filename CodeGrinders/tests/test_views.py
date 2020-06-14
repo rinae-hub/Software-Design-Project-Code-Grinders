@@ -376,6 +376,34 @@ class TestViews(TestCase):
         self.assertEquals(y2017,0)
         self.assertEquals(y2018,1)
 
+    #Filtered by RegistrationStart,F,M#
+    def test_not_qualified_males_in_ajax(self):
+        y2008 = student.objects.filter(RegistrationStart='2008').filter(Qualified='F').filter(Gender='M').count()
+        y2009 = student.objects.filter(RegistrationStart='2009').filter(Qualified='F').filter(Gender='M').count()
+        y2010 = student.objects.filter(RegistrationStart='2010').filter(Qualified='F').filter(Gender='M').count()
+        y2011 = student.objects.filter(RegistrationStart='2011').filter(Qualified='F').filter(Gender='M').count()
+        y2012 = student.objects.filter(RegistrationStart='2012').filter(Qualified='F').filter(Gender='M').count()
+        y2013 = student.objects.filter(RegistrationStart='2013').filter(Qualified='F').filter(Gender='M').count()
+        y2014 = student.objects.filter(RegistrationStart='2014').filter(Qualified='F').filter(Gender='M').count()
+        y2015 = student.objects.filter(RegistrationStart='2015').filter(Qualified='F').filter(Gender='M').count()
+        y2016 = student.objects.filter(RegistrationStart='2016').filter(Qualified='F').filter(Gender='M').count()
+        y2017 = student.objects.filter(RegistrationStart='2017').filter(Qualified='F').filter(Gender='M').count()
+        y2018 = student.objects.filter(RegistrationStart='2018').filter(Qualified='F').filter(Gender='M').count()
+
+
+        self.assertEquals(y2008,0)
+        self.assertEquals(y2009,0)
+        self.assertEquals(y2010,0)
+        self.assertEquals(y2011,0)
+        self.assertEquals(y2012,0)
+        self.assertEquals(y2013,0)
+        self.assertEquals(y2014,0)
+        self.assertEquals(y2015,1)
+        self.assertEquals(y2016,2)
+        self.assertEquals(y2017,0)
+        self.assertEquals(y2018,2)
+
+
 
 
 
