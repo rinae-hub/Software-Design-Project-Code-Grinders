@@ -18,7 +18,7 @@ install:
 script:
 - coverage erase
 - coverage run --source=./ manage.py test CodeGrinders
-- coverage report -m
+- coverage report --fail-under=100 --show-missing
 
 after_success:
   coveralls
