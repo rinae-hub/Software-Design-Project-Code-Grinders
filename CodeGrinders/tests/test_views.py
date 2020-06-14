@@ -3,6 +3,7 @@ import unittest
 from django.urls import reverse
 from web.forms import UserRegisterForm, GenerateGraphForm
 from web.models import student
+import json
 
 
 class TestViews(TestCase):
@@ -28,9 +29,43 @@ class TestViews(TestCase):
     # checking whether the ajax_generate_graph is returning data correctly as it should
     def test_ajax_view_POST(self):
         client= Client()
+
         response = self.client.post(reverse('ajax'),
-        data={'dependent_extra_values':'RegistrationStart','dependent_values':'RegistrationEnd','colours':'#0000FF','name_1':'label1','name_2':'label2','graph_type':'bar'},
-        content_type='application/json',HTTP_X_REQUESTED_WITH='XMLHttpRequest')
+        json.dumps({
+        "independent_variable": "years","dependent_variable":"RegistrationStart",
+        "dependent_variable_extra": "Blank","colours": "#00FF00","graph_type": "bar",
+        "csrfmiddlewaretoken": "c5uwGWhQV2xzWBfwPKO2PIqGd88DgyzLtKf56"
+        }),
+        content_type='json',HTTP_X_REQUESTED_WITH='XMLHttpRequest')
+        json_string = response.content
+        response_data = json.loads(json_string)
+        dependent_variable =response_data["dependent_values"]
+        if dependent_variable == 'Biological Science Degree':
+            y2008 =student.objects.filter(RegistrationStart='2008').filter(Streamline='Biological Science Degree').count()
+            y2009 =student.objects.filter(RegistrationStart='2009').filter(Streamline='Biological Science Degree').count()
+            y2010 =student.objects.filter(RegistrationStart='2010').filter(Streamline='Biological Science Degree').count()
+            y2011 =student.objects.filter(RegistrationStart='2011').filter(Streamline='Biological Science Degree').count()
+            y2012 =student.objects.filter(RegistrationStart='2012').filter(Streamline='Biological Science Degree').count()
+            y2013 =student.objects.filter(RegistrationStart='2013').filter(Streamline='Biological Science Degree').count()
+            y2014 =student.objects.filter(RegistrationStart='2014').filter(Streamline='Biological Science Degree').count()
+            y2015 =student.objects.filter(RegistrationStart='2015').filter(Streamline='Biological Science Degree').count()
+            y2016 =student.objects.filter(RegistrationStart='2016').filter(Streamline='Biological Science Degree').count()
+            y2017 = student.objects.filter(RegistrationStart='2017').filter(Streamline='Biological Science Degree').count()
+            y2018 = student.objects.filter(RegistrationStart='2018').filter(Streamline='Biological Science Degree').count()
+
+            self.assertEquals(y2008,1)
+            self.assertEquals(y2009,0)
+            self.assertEquals(y2010,0)
+            self.assertEquals(y2011,0)
+            self.assertEquals(y2012,0)
+            self.assertEquals(y2013,0)
+            self.assertEquals(y2014,0)
+            self.assertEquals(y2015,1)
+            self.assertEquals(y2016,0)
+            self.assertEquals(y2017,0)
+            self.assertEquals(y2018,4)
+
+        print(response_data)
         self.assertEquals(response.status_code,200)
 
     '''Testing value returned by database are valid'''
