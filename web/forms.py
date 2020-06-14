@@ -8,7 +8,8 @@ graphs = [('bar', 'Bar-Graph'),
           ('lines', 'Line-Graph'),
           ('scatter', 'Scatter-Plot'),
           ('sunburst', 'Sunburst'),
-          ('markers', 'Bubble Chart')
+          ('markers', 'Bubble Chart'),
+          ('polar','Polar Chart')
           ]
 dependent = [
     ('RegistrationStart', 'Registered Students'),
