@@ -16,7 +16,7 @@ install:
 
 
 script:
-- pytest --cov=CodeGrinders tests/
+- pytest --cov=CodeGrinders  CodeGrinders/tests/
 
 
 after_success:
