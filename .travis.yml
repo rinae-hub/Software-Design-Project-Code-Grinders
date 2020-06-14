@@ -1,9 +1,11 @@
 language: python
+
 python:
 # python versions
 - "3.8"
 - "3.7"
 - "3.6"
+
 # install dependencies
 install:
 - pip install -r requirements.txt
@@ -12,9 +14,8 @@ install:
 
 
 script:
--coverage erase
 -coverage run --source=./ manage.py test CodeGrinders
--coverage report -m
+
 
 after-success:
   coveralls
