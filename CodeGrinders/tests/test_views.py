@@ -42,15 +42,6 @@ class TestViews(TestCase):
     '''Testing value returned by database are valid'''
     #Filtered by RegistrationStart and Biological Science Degree#
     def test_Biological_Science_Degree_in_ajax(self):
-        client= Client()
-
-        response = self.client.post(reverse('ajax'),
-        json.dumps({
-        "independent_variable": "years","dependent_variable":"RegistrationStart",
-        "dependent_variable_extra": "Blank","colours": "#00FF00","graph_type": "bar",
-        "csrfmiddlewaretoken": "c5uwGWhQV2xzWBfwPKO2PIqGd88DgyzLtKf56"
-        }),
-        content_type='json',HTTP_X_REQUESTED_WITH='XMLHttpRequest')
         y2008 =student.objects.filter(RegistrationStart='2008').filter(Streamline='Biological Science Degree').count()
         y2009 =student.objects.filter(RegistrationStart='2009').filter(Streamline='Biological Science Degree').count()
         y2010 =student.objects.filter(RegistrationStart='2010').filter(Streamline='Biological Science Degree').count()
