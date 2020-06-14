@@ -157,7 +157,7 @@ class TestViews(TestCase):
         self.assertEquals(y2017,0)
         self.assertEquals(y2018,1)
 
-        #Filtered by RegistrationStart#
+    #Filtered by RegistrationStart#
     def test_registered_in_ajax(self):
         y2008 = student.objects.filter(RegistrationStart='2008').count()
         y2009 = student.objects.filter(RegistrationStart='2009').count()
@@ -183,6 +183,58 @@ class TestViews(TestCase):
         self.assertEquals(y2017,0)
         self.assertEquals(y2018,3)
 
+        #Filtered by RegistrationEnd#
+        def test_deregistered_in_ajax(self):
+            y2008 = student.objects.filter(RegistrationEnd='2008').count()
+            y2009 = student.objects.filter(RegistrationEnd='2009').count()
+            y2010 = student.objects.filter(RegistrationEnd='2010').count()
+            y2011 = student.objects.filter(RegistrationEnd='2011').count()
+            y2012 = student.objects.filter(RegistrationEnd='2012').count()
+            y2013 = student.objects.filter(RegistrationEnd='2013').count()
+            y2014 = student.objects.filter(RegistrationEnd='2014').count()
+            y2015 = student.objects.filter(RegistrationEnd='2015').count()
+            y2016 = student.objects.filter(RegistrationEnd='2016').count()
+            y2017 = student.objects.filter(RegistrationEnd='2017').count()
+            y2018 = student.objects.filter(RegistrationEnd='2018').count()
+
+            self.assertEquals(y2008,1)
+            self.assertEquals(y2009,0)
+            self.assertEquals(y2010,0)
+            self.assertEquals(y2011,0)
+            self.assertEquals(y2012,0)
+            self.assertEquals(y2013,1)
+            self.assertEquals(y2014,0)
+            self.assertEquals(y2015,1)
+            self.assertEquals(y2016,1)
+            self.assertEquals(y2017,0)
+            self.assertEquals(y2018,3)
+
+        #Filtered by yearstarted#
+        def test_yearstarted_in_ajax(self):
+            y2008 = student.objects.filter(YearStarted='2008').count()
+            y2009 = student.objects.filter(YearStarted='2009').count()
+            y2010 = student.objects.filter(YearStarted='2010').count()
+            y2011 = student.objects.filter(YearStarted='2011').count()
+            y2012 = student.objects.filter(YearStarted='2012').count()
+            y2013 = student.objects.filter(YearStarted='2013').count()
+            y2014 = student.objects.filter(YearStarted='2014').count()
+            y2015 = student.objects.filter(YearStarted='2015').count()
+            y2016 = student.objects.filter(YearStarted='2016').count()
+            y2017 = student.objects.filter(YearStarted='2017').count()
+            y2018 = student.objects.filter(YearStarted='2018').count()
+
+            self.assertEquals(y2008,1)
+            self.assertEquals(y2009,0)
+            self.assertEquals(y2010,0)
+            self.assertEquals(y2011,0)
+            self.assertEquals(y2012,0)
+            self.assertEquals(y2013,1)
+            self.assertEquals(y2014,0)
+            self.assertEquals(y2015,1)
+            self.assertEquals(y2016,1)
+            self.assertEquals(y2017,0)
+            self.assertEquals(y2018,3)
+            
     def test_graph_view_GET(self):
         client = Client()
         form = GenerateGraphForm()
