@@ -6,6 +6,7 @@ from web.models import student
 
 
 class TestViews(TestCase):
+    # creating a dummy data
     def setUp(self):
         self.student1=student.objects.create(StudentNumber = '70141',Gender='F',RegistrationStart='2008', RegistrationEnd='2018',Streamline='Biological Science Degree')
         self.student2=student.objects.create(StudentNumber = '70151',Gender='F',RegistrationStart='2013',RegistrationEnd='2012',Streamline='Biological Science Degree')
@@ -17,49 +18,41 @@ class TestViews(TestCase):
 
     # checking whether the ajax_generate_graph is returning data correctly as it should
     def test_ajax_view_POST(self):
-        dependent_values =[1043, 514, 538, 568, 553, 622, 621, 709, 783, 715, 796]
-        dependent_values_1 =[1043, 514, 538, 568, 553, 622, 621, 709, 783, 715, 796]
-        bar = 'bar'
-        color = '#0000FF'
-        label1 ='label1'
-        label2 ='label2'
         client= Client()
         response = self.client.post(reverse('ajax'),
-        data={'dependent_extra_values':dependent_values_1,'dependent_values':dependent_values,'colours':color,'name_1':label1,'name_2':label2,'graph_type':bar},
+        data={'dependent_extra_values':'RegistrationStart','dependent_values':'RegistrationEnd','colours':'#0000FF','name_1':'label1','name_2':'label2','graph_type':'bar'},
         content_type='application/json',HTTP_X_REQUESTED_WITH='XMLHttpRequest')
         self.assertEquals(response.status_code,200)
 
     '''Testing value returned by database are valid'''
     #Filtered by RegistrationStart and Biological Science Degree#
-    def test_values_returned_by_database_Biological_Science_Degree_in_ajax(self):
-        dependent_variable ="Biological Science Degree"
-        if dependent_variable == 'Biological Science Degree':
-            y2008 =student.objects.filter(RegistrationStart='2008').filter(Streamline='Biological Science Degree').count()
-            y2009 =student.objects.filter(RegistrationStart='2009').filter(Streamline='Biological Science Degree').count()
-            y2010 =student.objects.filter(RegistrationStart='2010').filter(Streamline='Biological Science Degree').count()
-            y2011 =student.objects.filter(RegistrationStart='2011').filter(Streamline='Biological Science Degree').count()
-            y2012 =student.objects.filter(RegistrationStart='2012').filter(Streamline='Biological Science Degree').count()
-            y2013 =student.objects.filter(RegistrationStart='2013').filter(Streamline='Biological Science Degree').count()
-            y2014 =student.objects.filter(RegistrationStart='2014').filter(Streamline='Biological Science Degree').count()
-            y2015 =student.objects.filter(RegistrationStart='2015').filter(Streamline='Biological Science Degree').count()
-            y2016 =student.objects.filter(RegistrationStart='2016').filter(Streamline='Biological Science Degree').count()
-            y2017 = student.objects.filter(RegistrationStart='2017').filter(Streamline='Biological Science Degree').count()
-            y2018 = student.objects.filter(RegistrationStart='2018').filter(Streamline='Biological Science Degree').count()
+    def test_Biological_Science_Degree_in_ajax(self):
+        y2008 =student.objects.filter(RegistrationStart='2008').filter(Streamline='Biological Science Degree').count()
+        y2009 =student.objects.filter(RegistrationStart='2009').filter(Streamline='Biological Science Degree').count()
+        y2010 =student.objects.filter(RegistrationStart='2010').filter(Streamline='Biological Science Degree').count()
+        y2011 =student.objects.filter(RegistrationStart='2011').filter(Streamline='Biological Science Degree').count()
+        y2012 =student.objects.filter(RegistrationStart='2012').filter(Streamline='Biological Science Degree').count()
+        y2013 =student.objects.filter(RegistrationStart='2013').filter(Streamline='Biological Science Degree').count()
+        y2014 =student.objects.filter(RegistrationStart='2014').filter(Streamline='Biological Science Degree').count()
+        y2015 =student.objects.filter(RegistrationStart='2015').filter(Streamline='Biological Science Degree').count()
+        y2016 =student.objects.filter(RegistrationStart='2016').filter(Streamline='Biological Science Degree').count()
+        y2017 = student.objects.filter(RegistrationStart='2017').filter(Streamline='Biological Science Degree').count()
+        y2018 = student.objects.filter(RegistrationStart='2018').filter(Streamline='Biological Science Degree').count()
 
-            self.assertEquals(y2008,1)
-            self.assertEquals(y2009,0)
-            self.assertEquals(y2010,0)
-            self.assertEquals(y2011,0)
-            self.assertEquals(y2012,0)
-            self.assertEquals(y2013,1)
-            self.assertEquals(y2014,0)
-            self.assertEquals(y2015,1)
-            self.assertEquals(y2016,1)
-            self.assertEquals(y2017,0)
-            self.assertEquals(y2018,3)
+        self.assertEquals(y2008,1)
+        self.assertEquals(y2009,0)
+        self.assertEquals(y2010,0)
+        self.assertEquals(y2011,0)
+        self.assertEquals(y2012,0)
+        self.assertEquals(y2013,1)
+        self.assertEquals(y2014,0)
+        self.assertEquals(y2015,1)
+        self.assertEquals(y2016,1)
+        self.assertEquals(y2017,0)
+        self.assertEquals(y2018,3)
 
     #Filtered by RegistrationEnd and Female#
-    def test_values_returned_by_database_deregistered_females_in_ajax(self):
+    def test_deregistered_females_in_ajax(self):
         y2008 = student.objects.filter(RegistrationEnd='2008').filter(Gender='F').count()
         y2009 = student.objects.filter(RegistrationEnd='2009').filter(Gender='F').count()
         y2010 = student.objects.filter(RegistrationEnd='2010').filter(Gender='F').count()
@@ -85,7 +78,57 @@ class TestViews(TestCase):
         self.assertEquals(y2018,2)
 
 
+    #Filtered by RegistrationEnd and males#
+    def test_deregistered_males_in_ajax(self):
+        y2008 = student.objects.filter(RegistrationEnd='2008').filter(Gender='M').count()
+        y2009 = student.objects.filter(RegistrationEnd='2009').filter(Gender='M').count()
+        y2010 = student.objects.filter(RegistrationEnd='2010').filter(Gender='M').count()
+        y2011 = student.objects.filter(RegistrationEnd='2011').filter(Gender='M').count()
+        y2012 = student.objects.filter(RegistrationEnd='2012').filter(Gender='M').count()
+        y2013 = student.objects.filter(RegistrationEnd='2013').filter(Gender='M').count()
+        y2014 = student.objects.filter(RegistrationEnd='2014').filter(Gender='M').count()
+        y2015 = student.objects.filter(RegistrationEnd='2015').filter(Gender='M').count()
+        y2016 = student.objects.filter(RegistrationEnd='2016').filter(Gender='M').count()
+        y2017 = student.objects.filter(RegistrationEnd='2017').filter(Gender='M').count()
+        y2018 = student.objects.filter(RegistrationEnd='2018').filter(Gender='M').count()
 
+        self.assertEquals(y2008,1)
+        self.assertEquals(y2009,0)
+        self.assertEquals(y2010,0)
+        self.assertEquals(y2011,1)
+        self.assertEquals(y2012,0)
+        self.assertEquals(y2013,0)
+        self.assertEquals(y2014,0)
+        self.assertEquals(y2015,0)
+        self.assertEquals(y2016,1)
+        self.assertEquals(y2017,0)
+        self.assertEquals(y2018,0)
+
+    #Filtered by RegistrationStart and females#
+    def test_registered_females_in_ajax(self):
+        y2008 = student.objects.filter(RegistrationStart='2008').filter(Gender='F').count()
+        y2009 = student.objects.filter(RegistrationStart='2009').filter(Gender='F').count()
+        y2010 = student.objects.filter(RegistrationStart='2010').filter(Gender='F').count()
+        y2011 = student.objects.filter(RegistrationStart='2011').filter(Gender='F').count()
+        y2012 = student.objects.filter(RegistrationStart='2012').filter(Gender='F').count()
+        y2013 = student.objects.filter(RegistrationStart='2013').filter(Gender='F').count()
+        y2014 = student.objects.filter(RegistrationStart='2014').filter(Gender='F').count()
+        y2015 = student.objects.filter(RegistrationStart='2015').filter(Gender='F').count()
+        y2016 = student.objects.filter(RegistrationStart='2016').filter(Gender='F').count()
+        y2017 = student.objects.filter(RegistrationStart='2017').filter(Gender='F').count()
+        y2018 = student.objects.filter(RegistrationStart='2018').filter(Gender='F').count()
+
+        self.assertEquals(y2008,1)
+        self.assertEquals(y2009,0)
+        self.assertEquals(y2010,0)
+        self.assertEquals(y2011,0)
+        self.assertEquals(y2012,0)
+        self.assertEquals(y2013,1)
+        self.assertEquals(y2014,0)
+        self.assertEquals(y2015,0)
+        self.assertEquals(y2016,0)
+        self.assertEquals(y2017,0)
+        self.assertEquals(y2018,2)
 
 
     def test_graph_view_GET(self):
