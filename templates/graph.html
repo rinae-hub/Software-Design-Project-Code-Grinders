@@ -35,13 +35,22 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript">
+    <div class="loader-wrapper">
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+    <script>
+        $(window).on("load",function(){
+          $(".loader-wrapper").fadeOut("slow");
+        });
+    </script>
+<script type="text/javascript">
 var data
 var xvalues
 var yvalues
 var yvalues2
 var tt
 var myChart
+
 $('#SubmitButton').click(function (event) {
    event.preventDefault(); //so that we stop normal form submit.
    console.log($('form#InputsForm').serializeArray());
@@ -51,7 +60,6 @@ $('#SubmitButton').click(function (event) {
         dataType: 'json',
         data: $('form#InputsForm').serializeArray(),
         success: function (data) {
-        console.log(data['dependent_extra_values']);
         xvalues = ['2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018'];
         yvalues = data['dependent_values'];
         yvalues2 = data['dependent_extra_values'];
@@ -73,19 +81,7 @@ $('#SubmitButton').click(function (event) {
                     datasets: [{
                         label: 'number',
                         data: yvalues,
-                        backgroundColor: [
-                           '#FFFDE7',
-                            '#FFF9C4 ',
-                            '#FFF59D ',
-                            '#FFF176 ',
-                            '#FFEE58 ',
-                            '#FDD835 ',
-                            '#FBC02D',
-                            '#F9A825 ',
-                            '#F57F17',
-                            '#FF6F00 ',
-                            '#E65100 '
-                        ],
+                        backgroundColor:'#FDC830',
                         options: {
                             layout: {
                                 padding: {
@@ -96,37 +92,13 @@ $('#SubmitButton').click(function (event) {
                                 }
                             }
                         },
-                        borderColor: [
-                            'black',
-                            'black',
-                            'black',
-                            'black',
-                            'black',
-                            'black',
-                            'black',
-                            'black',
-                            'black',
-                            'black',
-                            'black'
-                        ],
+                        borderColor: 'black',
                         borderWidth: 2
                     },
                     {
                         label: 'male',
                         data: yvalues2,
-                        backgroundColor: [
-                           '#0D47A1',
-                           '#1565C0',
-                           '#1976D2',
-                           '#1E88E5',
-                           '#2196F3',
-                           '#42A5F5',
-                           '#64B5F6',
-                           '#90CAF9',
-                           '#BBDEFB',
-                           '#E3F2FD',
-                           '#E1F5FE'
-                        ],
+                        backgroundColor:'#78ffd6',
                         options: {
                             layout: {
                                 padding: {
@@ -137,36 +109,28 @@ $('#SubmitButton').click(function (event) {
                                 }
                             }
                         },
-                        borderColor: [
-                            'black',
-                            'black',
-                            'black',
-                            'black',
-                            'black',
-                            'black',
-                            'black',
-                            'black',
-                            'black',
-                            'black',
-                            'black',
-                        ],
+                        borderColor:'black',
                         borderWidth: 2
                     }
                     ]
                 },
                     options: {
                         legend: {
-                            display: false,
+                            display: true,
+                            labels: {
+                                fontColor: "white",
+                            }
                         },
                         title: {
-                            display: true,
-                            text: 'WITWATERSRAND',
+                            display: false,
+                            text: '',
                             fontColor: 'white',
                             fontSize: 44
                         },
 
                     scales: {
                         xAxes: [{
+                            barThickness: 45,
                             display: true,
                             scaleLabel: {
                                 display: true,
@@ -210,20 +174,17 @@ $('#SubmitButton').click(function (event) {
                         label: 'no.std',
                         data: yvalues,
                         backgroundColor: [
-
-                           '#32cd32',
-                            'rgba(255,128,0)',
-                            'rgba(255,255,0)',
-                            '#eeeed1',
-                            '#171717',
-                            'rgba(255,0,255)',
-                            'rgba(255,0,128)',
-                            '#bf3eff',
-                            'rgba(0,0,255)',
-                            '#ee9572',
-                            'rgba(255,0,0)'
-
-
+                            '#003f5c',
+                            '#2f4b7c',
+                            '#665191',
+                            '#a05195',
+                            '#d45087',
+                            '#f95d6a',
+                            '#ff7c43',
+                            '#ffa600',
+                            '#eaa17c',
+                            '#e48367',
+                            '#dd6359',
                         ],
                         options: {
                             layout: {
@@ -235,27 +196,20 @@ $('#SubmitButton').click(function (event) {
                                 }
                             }
                         },
-                        borderColor: [
-                            'black',
-                            'black',
-                            'black',
-                            'black',
-                            'black',
-                            'black',
-                            'black',
-                            'black',
-                            'black',
-                            'black',
-                            'black',
-
-                        ],
+                        borderColor:'white',
                         borderWidth: 1
                     }]
                 },
                     options: {
+                        legend: {
+                            labels: {
+                                fontColor: "white",
+                            }
+                        },
                         title: {
-                            display: true,
+                            display: false,
                             text: 'UNIVERSITY OF THE WITWATERSRAND',
+                            fontColor: "white",
                             fontSize: 44
                         },
                     scales: {
@@ -264,11 +218,11 @@ $('#SubmitButton').click(function (event) {
                             scaleLabel: {
                                 display: true,
                                 labelString: 'YEARS',
-                                fontColor:'#000000',
+                                fontColor:'white',
                                 fontSize:25
                             },
                             ticks: {
-                               fontColor: "black",
+                               fontColor: "white",
                                fontSize: 20
                               }
                         }],
@@ -277,11 +231,11 @@ $('#SubmitButton').click(function (event) {
                             scaleLabel: {
                                 display: true,
                                 labelString: 'NUMBER OF STUDENTS',
-                                fontColor: 'black',
+                                fontColor: 'white',
                                 fontSize:25
                             },
                             ticks: {
-                                  fontColor: "black",
+                                  fontColor: "white",
                                   fontSize: 20
                             }
                         }]

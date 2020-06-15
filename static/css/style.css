@@ -29,8 +29,9 @@ header{
     height:auto;
     color:white;
     font-family:Arial;
+    text-shadow: white 0px 0px 15px;
 }
-.logo h1 span {color:#05f7ff}
+.logo h1 span {color:#05f7ff;  text-shadow: blue 0px 0px 15px;}
 .nav-area{
     float:right;
     list-style:none;
@@ -55,6 +56,8 @@ header{
     box-shadow: 0 0 10px #f3f3f3, 0 0 40px #f3f3f3, 0 0 80px #f3f3f3;
     transition: all .5s;
 }
+
+
 
 .footer{
 margin-top:auto;
