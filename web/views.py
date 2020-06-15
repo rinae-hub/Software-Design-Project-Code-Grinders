@@ -781,5 +781,5 @@ def register_view(request):
 
 
 def redirect_view(request):
-    response = redirect('')#pragma: no cover
-    return response        #pragma: no cover
+    response = redirect('')
+    return response        
