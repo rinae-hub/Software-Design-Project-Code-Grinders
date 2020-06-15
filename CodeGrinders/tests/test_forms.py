@@ -24,11 +24,11 @@ class TestForms(TestCase):
 
     #testing the GenerateGraphForm with valid data
     def test_graphform_valid_data(self):
-        form = GenerateGraphForm(data={'independent_variable':'Years','dependent_variable':'Registered Students','dependent_variable_extra':'Registered Students','colours':'Blue','graph_type':'Bar-Graph'})
+        form = GenerateGraphForm(data={'independent_variable':'Years','dependent_variable_female':'Registered Students','dependent_variable_male':'Registered Students','graph_type':'Bar-Graph'})
         self.assertTrue(form.is_valid())
 
     #testing the GenerateGraphForm with no valid data
     def test_graphform_valid_no_data(self):
         form =GenerateGraphForm(data={})
         self.assertFalse(form.is_valid())
-        self.assertEquals(len(form.errors),5)
+        self.assertEquals(len(form.errors),4)
