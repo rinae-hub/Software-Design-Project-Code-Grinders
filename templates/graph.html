@@ -55,6 +55,7 @@ var label2
 var chart_t
 var leg
 var lm
+var x
 
 $('#SubmitButton').click(function (event) {
    event.preventDefault(); //so that we stop normal form submit.
@@ -70,13 +71,16 @@ $('#SubmitButton').click(function (event) {
         yvalues2 = data['dependent_extra_values'];
         label1 = data['name_1'];
         label2 = data['name_2'];
+
         if(label2 == " and "){
             chart_t = label1;
+            x = Boolean(0);
         }else{
-            chart_t = label1 + label2
+            chart_t = label1 + label2;
+            x = Boolean(1);
         }
         if(label1 == "Number of Female Registered Students" || label1 == "Number of Female Deregistered Students"|| label1 == "Female and Qualified"|| label1 == "Female and Not Qualified"){
-        leg = 'female'
+        leg = 'Female'
         }else{leg = 'students'}
         tt = data['graph_type'];
         chartIt();
@@ -131,7 +135,7 @@ $('#SubmitButton').click(function (event) {
                 },
                     options: {
                         legend: {
-                            display: true,
+                            display: x,
                             labels: {
                                 fontColor: "white",
                             }
@@ -222,8 +226,8 @@ $('#SubmitButton').click(function (event) {
                             }
                         },
                         title: {
-                            display: false,
-                            text: 'UNIVERSITY OF THE WITWATERSRAND',
+                            display:true,
+                            text: chart_t,
                             fontColor: "white",
                             fontSize: 44
                         },
