@@ -6,6 +6,7 @@ from web.models import student
 
 
 def ajax_generate_graph(request):
+    #ajax call
     if request.is_ajax():
         graph_type = request.POST.get('graph_type', False)
         dependent_variable = request.POST.get('dependent_variable_female', False)
