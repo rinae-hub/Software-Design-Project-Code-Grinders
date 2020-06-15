@@ -21,10 +21,6 @@ class TestUrls(SimpleTestCase):
         url = reverse('logout')
         self.assertEquals(resolve(url).func.view_class,django.contrib.auth.views.LogoutView)
 
-    #testing whether the url to abc view is working
-    def test_abc_url_is_resolved(self):
-        url = reverse('abc')
-        self.assertEquals(resolve(url).func,abc)
 
     #testing whether the url to ajax view is working
     def test_ajax_url_is_resolved(self):
