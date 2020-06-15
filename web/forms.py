@@ -3,27 +3,27 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
 independent = [('years', 'Years')]
-graphs = [('bar', 'Bar-Graph'),
-          ('pie', 'Pie-Chart'),
-          ('lines', 'Line-Graph'),
-          ('scatter', 'Scatter-Plot'),
-          ('sunburst', 'Sunburst'),
-          ('markers', 'Bubble Chart')
+graphs = [('bar', 'bar'),
+          ('pie', 'pie'),
+          ('line', 'Line'),
+          ('radar', 'radar'),
+          ('polarArea', 'polarArea'),
           ]
 dependent = [
     ('RegistrationStart', 'Registered Students'),
     ('RegistrationEnd', 'Deregistered Students'),
     ('YearStarted', 'First Year Students - UG OR PG'),
-    ('Female and RegistrationStart', 'Female Registered Students'),
-    ('Female and RegistrationEnd', 'Female Deregistered Students'),
+    ('No Student Record', 'No Student Record'),
     ('Biological Science Degree', 'Biological Science Degree'),
     ('Mathematics Degree', 'Mathematics Degree'),
     ('Physical Science Degree', 'Physical Science Degree'),
     ('Earth Science Degree', 'Earth Science Degree'),
     ('Unknown Streamline', 'Unknown Streamline'),
+    ('Female and RegistrationStart', 'Female Registered Students'),
+    ('Female and RegistrationEnd', 'Female Deregistered Students'),
     ('Female and Qualified', 'Female and Qualified'),
     ('Female and Not Qualified', 'Female and Not Qualified'),
-    ('No Student Record', 'No Student Record'),
+
 
 ]
 dependent_extras = [
@@ -34,19 +34,11 @@ dependent_extras = [
     ('Male and Not Qualified', 'Male and Not Qualified'),
 
 ]
-colour = [('#00FF00', 'Green'),
-          ('#0000FF', 'Blue'),
-          ('#800000', 'Maroon'),
-          ('#FFFF00', 'Yellow'),
-          ('#808000', 'Olive'),
-          ('#00FF00', 'Lime'),
-          ]
 
 class GenerateGraphForm(forms.Form):
     independent_variable = forms.CharField(required=True,widget=forms.Select(choices=independent))
-    dependent_variable = forms.CharField(required=True,widget=forms.Select(choices=dependent))
-    dependent_variable_extra =forms.CharField(widget=forms.Select(choices=dependent_extras))
-    colours =forms.CharField(widget=forms.Select(choices=colour))
+    dependent_variable_female = forms.CharField(required=True,widget=forms.Select(choices=dependent))
+    dependent_variable_male =forms.CharField(widget=forms.Select(choices=dependent_extras))
     graph_type = forms.CharField(widget=forms.Select(choices=graphs))
 
 
