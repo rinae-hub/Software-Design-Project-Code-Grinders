@@ -13,7 +13,6 @@ dependent = [
     ('RegistrationStart', 'Registered Students'),
     ('RegistrationEnd', 'Deregistered Students'),
     ('YearStarted', 'First Year Students - UG OR PG'),
-    ('No Student Record', 'No Student Record'),
     ('Biological Science Degree', 'Biological Science Degree'),
     ('Mathematics Degree', 'Mathematics Degree'),
     ('Physical Science Degree', 'Physical Science Degree'),
@@ -40,6 +39,7 @@ class GenerateGraphForm(forms.Form):
     dependent_variable_female = forms.CharField(required=True,widget=forms.Select(choices=dependent))
     dependent_variable_male =forms.CharField(widget=forms.Select(choices=dependent_extras))
     graph_type = forms.CharField(widget=forms.Select(choices=graphs))
+
 
 
 class UserRegisterForm(UserCreationForm):

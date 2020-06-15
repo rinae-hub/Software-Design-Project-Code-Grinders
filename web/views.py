@@ -701,8 +701,8 @@ def ajax_generate_graph(request):
 
         '''Determination of graph labels '''
 
-        label0 = 'label'
-        label1 = 'label'
+        label0 = ''
+        label1 = ''
         if dependent_variable == 'RegistrationStart':
             label0 = 'Number of Registered Students'
         elif dependent_variable == 'RegistrationEnd':
@@ -752,7 +752,7 @@ def ajax_generate_graph(request):
             "graph_type": graph_type,
             "colours": colour_value,
             "name_1": label0,
-            "name_2": label1
+            "name_2": ' and '+ label1
         }
 
         return JsonResponse(graphinfo)

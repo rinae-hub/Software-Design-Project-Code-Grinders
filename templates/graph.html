@@ -50,6 +50,11 @@ var yvalues
 var yvalues2
 var tt
 var myChart
+var label1
+var label2
+var chart_t
+var leg
+var lm
 
 $('#SubmitButton').click(function (event) {
    event.preventDefault(); //so that we stop normal form submit.
@@ -63,6 +68,16 @@ $('#SubmitButton').click(function (event) {
         xvalues = ['2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018'];
         yvalues = data['dependent_values'];
         yvalues2 = data['dependent_extra_values'];
+        label1 = data['name_1'];
+        label2 = data['name_2'];
+        if(label2 == " and "){
+            chart_t = label1;
+        }else{
+            chart_t = label1 + label2
+        }
+        if(label1 == "Number of Female Registered Students" || label1 == "Number of Female Deregistered Students"|| label1 == "Female and Qualified"|| label1 == "Female and Not Qualified"){
+        leg = 'female'
+        }else{leg = 'students'}
         tt = data['graph_type'];
         chartIt();
       }
@@ -79,7 +94,7 @@ $('#SubmitButton').click(function (event) {
                 data: {
                     labels: xvalues,
                     datasets: [{
-                        label: 'number',
+                        label: leg,
                         data: yvalues,
                         backgroundColor:'#FDC830',
                         options: {
@@ -96,7 +111,7 @@ $('#SubmitButton').click(function (event) {
                         borderWidth: 2
                     },
                     {
-                        label: 'male',
+                        label: 'Male',
                         data: yvalues2,
                         backgroundColor:'#78ffd6',
                         options: {
@@ -122,8 +137,8 @@ $('#SubmitButton').click(function (event) {
                             }
                         },
                         title: {
-                            display: false,
-                            text: '',
+                            display: true,
+                            text: chart_t,
                             fontColor: 'white',
                             fontSize: 44
                         },
