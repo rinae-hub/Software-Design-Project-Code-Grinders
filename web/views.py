@@ -18,7 +18,7 @@ def ajax_generate_graph(request):
         dependent_values_1 = []
         label0 = 'label'
         label1 = 'label'
-        """
+        
         '''Determination of first dependent variable'''
         if dependent_variable == 'Female and RegistrationEnd':
             y2008 = student.objects.filter(RegistrationEnd='2008').filter(Gender='F').count()
@@ -736,7 +736,7 @@ def ajax_generate_graph(request):
             label1 = 'Male and Qualified'
         elif dependent_extra_variable == 'Male and Not Qualified':
             label1 = 'Male and Not Qualified'
-         """
+         
 
         graphinfo = {
             "independent_values": independent_values,
