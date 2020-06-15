@@ -29,7 +29,6 @@ class TestViews(TestCase):
     # checking whether the ajax_generate_graph is returning data correctly as it should
     def test_ajax_view_POST(self):
         client= Client()
-
         response = self.client.post(reverse('ajax'),
         json.dumps({
         "independent_variable": "years","dependent_variable":"RegistrationStart",
@@ -432,12 +431,7 @@ class TestViews(TestCase):
         self.assertEquals(response.status_code,200)
         self.assertTemplateUsed(response, 'home.html')
 
-    # testing abc view
-    def test_abc_view_GET(self):
-        client= Client()
-        response=client.get(reverse('abc'))
-        self.assertEquals(response.status_code,200)
-        self.assertTemplateUsed(response, 'abc.html')
+
 
 
 
