@@ -1,6 +1,6 @@
 from django.test import SimpleTestCase
 from django.urls import reverse, resolve
-from web.views import register_view, abc, home_view, graph, ajax_generate_graph
+from web.views import register_view, home_view, graph, ajax_generate_graph
 import django.contrib.auth.views
 
 
