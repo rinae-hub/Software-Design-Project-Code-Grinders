@@ -10,7 +10,10 @@
 
 {% block nav%}
 <ul class="nav-area">
-<li><a href="{% url 'logout' %}">Logout</a></li>
+<li><a href="{% url 'home' %}">Home</a></li>
+  <li><a href="#">Team</a></li>
+  <li><a href="#"><i class="fa fa-info-circle"></i>About</a></li>
+  <li><a href="{% url 'logout' %}">Logout</a></li>
 </ul>
 {% endblock %}
 {% block content%}
