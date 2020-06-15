@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {%load crispy_forms_tags%}
 {%load static%}
-{%block title%} fuck this {%endblock%}
+{%block title%}análysi{%endblock%}
 
 {%block links%}
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -23,7 +23,7 @@
                         {% csrf_token %}
                         {{ form|crispy }}
                     </table>
-                 <button id="SubmitButton"type="submit" class="btn btn-success">Generate</button>
+                 <button id="SubmitButton"type="submit" class="btn btn-success">Chart It</button>
                 </form>
             </div>
         </div>
@@ -61,244 +61,237 @@ $('#SubmitButton').click(function (event) {
    });
 
    function chartIt(){
-   if (tt == 'bar' || tt == 'line'){
-    if (myChart) {
-            myChart.destroy();
-        }
-        var ctx = document.getElementById('myDiv').getContext('2d');
-        myChart = new Chart(ctx, {
-            type: tt,
-            data: {
-                labels: xvalues,
-                datasets: [{
-                    label: '',
-                    data: yvalues,
-                    backgroundColor: [
-
-                       '#FFFDE7',
-                        '#FFF9C4 ',
-                        '#FFF59D ',
-                        '#FFF176 ',
-                        '#FFEE58 ',
-                        '#FDD835 ',
-                        '#FBC02D',
-                        '#F9A825 ',
-                        '#F57F17',
-                        '#FF6F00 ',
-                        '#E65100 '
-
-
-                    ],
-                    options: {
-                        layout: {
-                            padding: {
-                                left: 50,
-                                right: 0,
-                                top: 0,
-                                bottom: 0
-                            }
-                        }
-                    },
-                    borderColor: [
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-
-                    ],
-                    borderWidth: 1
-                },
-                {
-                    label: 'no.std',
-                    data: yvalues2,
-                    backgroundColor: [
-
-                       '#ffffff',
-                        '#ffffff',
-                        '#ffffff',
-                        '#ffffff',
-                        '#ffffff',
-                        '#ffffff',
-                        '#ffffff',
-                        '#ffffff',
-                        '#ffffff',
-                        '#ffffff',
-                        '#ffffff'
-
-
-                    ],
-                    options: {
-                        layout: {
-                            padding: {
-                                left: 50,
-                                right: 0,
-                                top: 0,
-                                bottom: 0
-                            }
-                        }
-                    },
-                    borderColor: [
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-
-                    ],
-                    borderWidth: 1
-                }
-
-                ]
-            },
-                options: {
-                    title: {
-                        display: true,
-                        text: 'UNIVERSITY OF THE WITWATERSRAND',
-                        fontColor: 'white',
-                        fontSize: 44
-                    },
-
-                scales: {
-                    xAxes: [{
-                        display: true,
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'YEARS',
-                            fontColor:'#ffffff',
-                            fontSize:25
-                        },
-                        ticks: {
-                           fontColor: "white",
-                           fontSize: 20
-                          }
-                    }],
-                    yAxes: [{
-                        display: true,
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'NUMBER OF STUDENTS',
-                            fontColor: 'white',
-                            fontSize:25
-                        },
-                        ticks: {
-                              fontColor: "white",
-                              fontSize: 20
-                        }
-                    }]
-                }
+        if (tt == 'bar' || tt == 'line'){
+            if (myChart) {
+                myChart.destroy();
             }
-        });
+            var ctx = document.getElementById('myDiv').getContext('2d');
+            myChart = new Chart(ctx, {
+                type: tt,
+                data: {
+                    labels: xvalues,
+                    datasets: [{
+                        label: 'number',
+                        data: yvalues,
+                        backgroundColor: [
+                           '#FFFDE7',
+                            '#FFF9C4 ',
+                            '#FFF59D ',
+                            '#FFF176 ',
+                            '#FFEE58 ',
+                            '#FDD835 ',
+                            '#FBC02D',
+                            '#F9A825 ',
+                            '#F57F17',
+                            '#FF6F00 ',
+                            '#E65100 '
+                        ],
+                        options: {
+                            layout: {
+                                padding: {
+                                    left: 50,
+                                    right: 0,
+                                    top: 0,
+                                    bottom: 0
+                                }
+                            }
+                        },
+                        borderColor: [
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+                            'black'
+                        ],
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'number',
+                        data: yvalues2,
+                        backgroundColor: [
+                           '#0D47A1',
+                           '#1565C0',
+                           '#1976D2',
+                           '#1E88E5',
+                           '#2196F3',
+                           '#42A5F5',
+                           '#64B5F6',
+                           '#90CAF9',
+                           '#BBDEFB',
+                           '#E3F2FD',
+                           '#E1F5FE'
+                        ],
+                        options: {
+                            layout: {
+                                padding: {
+                                    left: 50,
+                                    right: 0,
+                                    top: 0,
+                                    bottom: 0
+                                }
+                            }
+                        },
+                        borderColor: [
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+                        ],
+                        borderWidth: 2
+                    }
+                    ]
+                },
+                    options: {
+                        legend: {
+                            display: false,
+                        },
+                        title: {
+                            display: true,
+                            text: 'WITWATERSRAND',
+                            fontColor: 'white',
+                            fontSize: 44
+                        },
+
+                    scales: {
+                        xAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'YEARS',
+                                fontColor:'white',
+                                fontSize:25
+                            },
+                            ticks: {
+                               fontColor: "white",
+                               fontSize: 20
+                              }
+                        }],
+                        yAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'NUMBER OF STUDENTS',
+                                fontColor: 'white',
+                                fontSize:25
+                            },
+                            ticks: {
+                                  fontColor: "white",
+                                  fontSize: 20
+                            }
+                        }]
+                    }
+                }
+            });
         }
 
         if (tt == 'pie' || tt == 'polarArea' || tt == 'radar'){
-    if (myChart) {
-            myChart.destroy();
-        }
-        var ctx = document.getElementById('myDiv').getContext('2d');
-        myChart = new Chart(ctx, {
-            type: tt,
-            data: {
-                labels: xvalues,
-                datasets: [{
-                    label: 'no.std',
-                    data: yvalues,
-                    backgroundColor: [
-
-                       '#32cd32',
-                        'rgba(255,128,0)',
-                        'rgba(255,255,0)',
-                        '#eeeed1',
-                        '#171717',
-                        'rgba(255,0,255)',
-                        'rgba(255,0,128)',
-                        '#bf3eff',
-                        'rgba(0,0,255)',
-                        '#ee9572',
-                        'rgba(255,0,0)'
-
-
-                    ],
-                    options: {
-                        layout: {
-                            padding: {
-                                left: 50,
-                                right: 0,
-                                top: 0,
-                                bottom: 0
-                            }
-                        }
-                    },
-                    borderColor: [
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-                        'black',
-
-                    ],
-                    borderWidth: 1
-                }]
-            },
-                options: {
-                    title: {
-                        display: true,
-                        text: 'UNIVERSITY OF THE WITWATERSRAND',
-                        fontSize: 44
-                    },
-                scales: {
-                    xAxes: [{
-                        display: false,
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'YEARS',
-                            fontColor:'#000000',
-                            fontSize:25
-                        },
-                        ticks: {
-                           fontColor: "black",
-                           fontSize: 20
-                          }
-                    }],
-                    yAxes: [{
-                        display: false,
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'NUMBER OF STUDENTS',
-                            fontColor: 'black',
-                            fontSize:25
-                        },
-                        ticks: {
-                              fontColor: "black",
-                              fontSize: 20
-                        }
-                    }]
-                }
+            if (myChart) {
+                myChart.destroy();
             }
-        });
+            var ctx = document.getElementById('myDiv').getContext('2d');
+            myChart = new Chart(ctx, {
+                type: tt,
+                data: {
+                    labels: xvalues,
+                    datasets: [{
+                        label: 'no.std',
+                        data: yvalues,
+                        backgroundColor: [
+
+                           '#32cd32',
+                            'rgba(255,128,0)',
+                            'rgba(255,255,0)',
+                            '#eeeed1',
+                            '#171717',
+                            'rgba(255,0,255)',
+                            'rgba(255,0,128)',
+                            '#bf3eff',
+                            'rgba(0,0,255)',
+                            '#ee9572',
+                            'rgba(255,0,0)'
+
+
+                        ],
+                        options: {
+                            layout: {
+                                padding: {
+                                    left: 50,
+                                    right: 0,
+                                    top: 0,
+                                    bottom: 0
+                                }
+                            }
+                        },
+                        borderColor: [
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+                            'black',
+
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                    options: {
+                        title: {
+                            display: true,
+                            text: 'UNIVERSITY OF THE WITWATERSRAND',
+                            fontSize: 44
+                        },
+                    scales: {
+                        xAxes: [{
+                            display: false,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'YEARS',
+                                fontColor:'#000000',
+                                fontSize:25
+                            },
+                            ticks: {
+                               fontColor: "black",
+                               fontSize: 20
+                              }
+                        }],
+                        yAxes: [{
+                            display: false,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'NUMBER OF STUDENTS',
+                                fontColor: 'black',
+                                fontSize:25
+                            },
+                            ticks: {
+                                  fontColor: "black",
+                                  fontSize: 20
+                            }
+                        }]
+                    }
+                }
+            });
         }
-
-    }
-
+   }
 });
+
 </script>
 </div>
 

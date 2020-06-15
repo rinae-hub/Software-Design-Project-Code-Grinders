@@ -1,11 +1,12 @@
 body{
-  background:white;
+  overflow:hidden;
 }
+
 .leftside,.rightside{
     height:100vh;
+    border: 1px solid rgba(5, 247, 255, 0.5)
 }
 .leftside{
-border: 1px solid transparent;
     border-color:white;
     background: url("gray.jpg") no-repeat;
     padding:30px;
@@ -23,7 +24,7 @@ border: 1px solid transparent;
 }
 
 .form{
-    color:black;
+    color:white;
     height:500px;
     padding-left:20px;
     padding-top:50px;

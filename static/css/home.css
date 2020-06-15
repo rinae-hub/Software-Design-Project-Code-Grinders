@@ -1,12 +1,13 @@
 section{
     padding:100px;
-    height:550px;
+    height:320px;
 }
 .welcome{
-    background-color: rgba(0,0,0, 0.5);
+    background-color: rgba(0,0,0, 0.7);
     width:100%;
     align:center;
-    height:400px;
+    margin-top:0px;
+    height:350px;
     top:500px;
     text-align:center;
     padding:40px;
@@ -17,6 +18,7 @@ section{
      text-shadow: white 0px 0px 10px;
 
 }
+
 .code h1{
    text-align:center;
    text-shadow:-1px 1px 0 #000,
@@ -27,6 +29,7 @@ section{
    text-transform:uppercase;
    font-size:150px;
 }
+
 .code h1 span{color:#05f7ff}
 .welcome a:hover{
     background: #f3f3f3;
@@ -36,19 +39,15 @@ section{
 .code p{
     font-size:20px;
 }
-.reviews{
-    display:flex;
-    flex-direction:row;
+reviews{
+position:relative;
 }
 .review{
-    border: 3px solid transparent;
-    border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
-    border-image-slice: 1;
     padding:50px;
-    border-radius: 50px;
+    border-radius: 10px;
     text-align:center;
     img-align:center;
-    background-image:url(this.jpg);
+    background-color: rgba(0,0,0, 0.7);
     margin:auto;
     height:350px;
 }
@@ -57,12 +56,19 @@ section{
     border-radius:40px;
     width:150px;
 }
+P{
+    color:#f9f5ec;
+    width:100%;
+    text-shadow: white 0px 0px 10px;
+}
 
 .register{
+position:relative;
    align:center;
    border:1px solid #fff;
    border-radius: 25px;
    padding: 15px 25px;
+   margin-left:45%;
    text-decoration:none;
    text-transform:uppercase;
    font-size:14px;
@@ -77,11 +83,4 @@ section{
 		50%		{ background-color: #F0FFF0;}
 		75%		{ background-color: #ffd700;}
 		100%    { background-color: #FFE4E1;}
-		}
-
-		@media only screen and (max-width:50px){
-		.reviews{
-    display:flex;
-    flex-direction:row;
-}
 		}

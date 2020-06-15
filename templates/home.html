@@ -6,6 +6,7 @@
 {%endblock%}
 
 {%block links%}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
 {%endblock%}
 
@@ -14,11 +15,13 @@
 <ul class="nav-area">
      <li><a href="login">Login</a></li>
      <li><a href="register">Register</a></li>
+    <li><a href="#">Team</a></li>
      <li><a href="#"><i class="fa fa-info-circle"></i>About</a></li>
 </ul>
 {%endblock%}
 
 {%block content%}
+
 <section>
     <div class="welcome">
          <div class = "code">
@@ -29,31 +32,41 @@
          </div>
     </div>
 </section>
-<section class = "reviews">
-    <div>
-         <div class="review">
-             <img src="static/images/me.jpg" alt="">
-             <p>I 100% recommend their services,they are very good at their jobs and treat their customers with the
-             respect they need.I got what I needed and more,I am beyond satisfied with my data analysis.</p>
-         </div>
-    </div>
-    <div>
-        <div class="review">
-             <img src="static/images/me.jpg" alt="">
-             <p>I 100% recommend their services,they are very good at their jobs and treat their customers with the
-             respect they need.I got what I needed and more,I am beyond satisfied with my data analysis.</p>
-         </div>
-    </div>
+<br></br>
+<br></br>
 
-    <div>
+<section>
+    <div class="row">
+        <div class="col">
+             <div class="review">
+                 <img src="static/images/me.jpg" alt="">
+                 <p>I 100% recommend their services,they are very good at their jobs and treat their customers with the
+                 respect they need.I got what I needed and more,I am beyond satisfied with my data analysis.</p>
+             </div>
+        </div>
+        <div class="col">
+            <div class="review">
+                 <img src="static/images/me.jpg" alt="">
+                 <p>I 100% recommend their services,they are very good at their jobs and treat their customers with the
+                 respect they need.I got what I needed and more,I am beyond satisfied with my data analysis.</p>
+             </div>
+        </div>
+        <div class="col">
         <div class="review">
              <img src="static/images/me.jpg" alt="">
              <p>I 100% recommend their services,they are very good at their jobs and treat their customers with the
              respect they need.I got what I needed and more,I am beyond satisfied with my data analysis.</p>
          </div>
+    </div>
     </div>
 </section>
-<div class="register">
-    <a href="register">WE ARE THE BEST, REGISTER NOW!</a>
-</div>
+
+<br></br>
+<br></br>
+
+
+
+
+<br></br>
+<br></br>
 {%endblock%}

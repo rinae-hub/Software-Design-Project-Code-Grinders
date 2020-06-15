@@ -17,8 +17,8 @@ Login
 {% endblock %}
 
 {% block content %}
-<section>
-    <div class="wrapper">
+
+    <div class="wrapper1">
         {%if messages%} {%for message in messages%}
         <div class="alert alert-{{ message.tag }}">
             {{ message }}
@@ -37,11 +37,11 @@ Login
                 </div>
             </form>
             <div class="border-top pt-3">
-                <small class="text-muted" style="color:black; font-size:15px">
-                Need an account? <a class="ml-2" href="{% url 'register' %}">Sign Up Now</a>
+                <small class="text-muted" style="color:white; font-size:18px"><a1>Need an account? </a1>
+                <a class="ml-2" href="{% url 'register' %}">Sign Up Now</a>
             </small>
             </div>
         </div>
     </div>
-</section>
+
 {%endblock%}

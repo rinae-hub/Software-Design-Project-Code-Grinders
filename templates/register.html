@@ -18,8 +18,8 @@ Register
 {%endblock%}
 
 {%block content%}
-<section>
-    <div class="wrapper">
+
+    <div class="wrapper2">
         {%if messages%}
              {%for message in messages%}
                   <div class="alert alert-{{ message.tag }}">
@@ -30,26 +30,23 @@ Register
         {%endif%}
 
         <div class="content-section">
-            <form method="POST" >
-                {%csrf_token%}
+            <form class="fm" method="POST" >
                 <fieldset class="form-group">
-                    <legend class="border-bottom mb-4" style="color:black;">Become a code grinder today</legend>
+                    <legend class="border-bottom mb-4" style="color:white;">Register Now</legend>
+                    {%csrf_token%}
                     {{form|crispy}}
                 </fieldset>
-
                 <div class="form-group1">
                     <button class="btn" type="submit" style="color:white; ">Sign up</button>
                 </div>
-
             </form>
-
             <div class="border-top pt-3">
-                <small class="text-muted" style="color:black; font-size:15px;">
-                    Already have an account? <a class="ml-2" href="{% url 'login' %}" style="color:red;">Sign in</a>
+                <small class="text-muted" style="color:white; font-size:18px;"><a1>Already have an account? </a1>
+                    <a class="ml-2" href="{% url 'login' %}" style="color:red;">Sign in</a>
                 </small>
             </div>
         </div>
     </div>
 
-</section>
+
 {%endblock%}
