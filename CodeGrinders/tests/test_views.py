@@ -432,12 +432,7 @@ class TestViews(TestCase):
         self.assertEquals(response.status_code,200)
         self.assertTemplateUsed(response, 'home.html')
 
-    # testing abc view
-    def test_abc_view_GET(self):
-        client= Client()
-        response=client.get(reverse('abc'))
-        self.assertEquals(response.status_code,200)
-        self.assertTemplateUsed(response, 'abc.html')
+    
 
 
 
